@@ -44,6 +44,8 @@ public class SelfDestructWorld extends AbstractWorld
 		if (this.button.clicked(screenX, getHeight() - screenY))
 		{
 			System.out.println("OH NO!");
+			game.minigameLost();
+			
 		}
 		return true;
 	}
@@ -56,14 +58,16 @@ public class SelfDestructWorld extends AbstractWorld
 	}
 
 	@Override
-	public void pause() {
+	public void pause() 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	protected void minigameOver() {
-		
+	protected void minigameOver() 
+	{
+		game.minigameWon();
 	}
 	
 
