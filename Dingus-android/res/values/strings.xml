@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Invasion</string>
+    <string name="app_name">My LibGDX Game</string>
+    <string name="app_id">326908678594</string> 
+    <string name="leaderboard_id">CgkIwqOa6sEJEAIQBw</string>
+    <string name="achievement1_id">CgkIwqOa6sEJEAIQAg</string>
+    <string name="achievement2_id">CgkIwqOa6sEJEAIQAw</string>
+    <string name="achievement3_id">CgkIwqOa6sEJEAIQBA</string>
+    <string name="achievement4_id">CgkIwqOa6sEJEAIQBQ</string>
+    <string name="achievement5_id">CgkIwqOa6sEJEAIQBg</string>
 </resources>
