@@ -18,8 +18,8 @@ public class SelfDestructWorld extends AbstractWorld
 	@Override
 	protected void setupLevel() 
 	{
-		int tileWidth = atlas.findRegion("starBackground").getRegionWidth();
-		int tileHeight = atlas.findRegion("starBackground").getRegionHeight();
+		int tileWidth = atlas.findRegion("circuitBoard2").getRegionWidth();
+		int tileHeight = atlas.findRegion("circuitBoard2").getRegionHeight();
 		Image background;
 		for (int x = 0; x * tileWidth < this.getWidth(); x++)
 		{
@@ -27,14 +27,15 @@ public class SelfDestructWorld extends AbstractWorld
 			{
 
 				background = new Image(this.getAtlas().findRegion(
-						"starBackground"));
+						"circuitBoard2"));
 				background.setPosition(x * tileWidth, y * tileHeight);
 				addActor(background);
 			}
 		}
 		
-		button = new Button(atlas.findRegion("selfDestruct"), this);
+		button = new Button(atlas.findRegion("RedButton-Active"), this);
 		addActor(button);
+		button.setPosition(getWidth() / 2 - button.getWidth() / 2, getHeight()/ 2 - button.getWidth()/2);
 	}
 
 	public boolean touchDown(int screenX, int screenY, int pointer, int button)
