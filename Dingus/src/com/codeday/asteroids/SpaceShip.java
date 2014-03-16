@@ -18,7 +18,7 @@ public class SpaceShip extends Image
 {
 
 	private float playerAngle;
-	
+	private Vector2 velocity;
 	
 	public SpaceShip(TextureRegion texture, AbstractWorld world)
 	{
@@ -30,21 +30,28 @@ public class SpaceShip extends Image
 	
 	
 	
-	public void update(float delta, AsteroidsWorld world, float rotate, float thrust, ArrayList<asteroids> asteroids)
+	public void update(float delta, AsteroidsWorld world,  float thrust, ArrayList<asteroids> asteroids)
 	{
-		rotate(rotate * delta);
-		update(delta, rotate);
+		
+	
+		
+		float dxA = (float) (Math.cos(Math.toRadians(playerAngle)) * thrust);
+		float dyA = (float) (Math.sin(Math.toRadians(playerAngle)) * thrust);
+
+		float xPotential = getX() + dxA * delta;
+		float yPotential = getY() + dyA * delta;
+		setX(xPotential);
+		setY(yPotential);
 		
 	/*	if (checkCollisionAsteroids(asteroids))
 			world.playerDeath(getX() + getWidth() / 2, getY() + getHeight() / 2);*/
 		
 	}
 
-	public void update(float delta, float rotate)
+
+	public Vector2 getVelocity()
 	{
-		
-		playerAngle += rotate * delta;
+		return velocity;
 	}
-	
 	
 }

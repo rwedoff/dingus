@@ -72,26 +72,23 @@ public class AsteroidsWorld extends AbstractWorld
 	
 	private void spaceControls(float delta)
 	{
-		float rotate = 0;
-		if (controller.isKeyDown(Keys.LEFT))
-			rotate += 270;
-		if (controller.isKeyDown(Keys.RIGHT))
-			rotate -= 270;
-		
-		rotate -= 45 * Gdx.input.getAccelerometerY();
 		
 		float thrust = 0;
-		if (controller.isKeyDown(Keys.UP) || (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
+		
+		thrust += 100 * Gdx.input.getAccelerometerY();
+		
+		
+		if (controller.isKeyDown(Keys.RIGHT) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
 		{
 			
-			thrust = 2;
+			thrust = 500;
 		}
-		if (controller.isKeyDown(Keys.DOWN) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
+		if (controller.isKeyDown(Keys.LEFT) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
 		{
 			
-			thrust = -2;
+			thrust = -500;
 		}
-		s.update( delta, this, rotate,  thrust, asteroidList);
+		s.update( delta, this,   thrust, asteroidList);
 
 		
 

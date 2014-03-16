@@ -307,14 +307,18 @@ public class World extends Stage
 	private void playerControls(float delta)
 	{
 		float rotate = 0;
+		float thrust = 0;
 		if (controller.isKeyDown(Keys.LEFT))
+			{
 			rotate += 270;
+			thrust =2 ;
+			}
 		if (controller.isKeyDown(Keys.RIGHT))
 			rotate -= 270;
 		
 		rotate -= 45 * Gdx.input.getAccelerometerY();
 		
-		float thrust = 0;
+		
 		if (controller.isKeyDown(Keys.UP) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
 			thrust = 2;
 		if (controller.isKeyDown(Keys.DOWN) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
