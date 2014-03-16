@@ -76,7 +76,7 @@ public class LoadingWorld extends AbstractWorld
 		System.out.println(newLives + ", " + oldLives);
 		for (int i = 0; i < newLives; i++)
 		{
-			walker = new SpriteWalker(regions, .15f);
+			walker = new SpriteWalker(regions, .125f);
 			walker.setPosition( (i-1.5f)*walker.getWidth() + this.getWidth()/2, 
 					getHeight() / 2 - walker.getHeight() / 2);
 			addActor(walker);

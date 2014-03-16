@@ -52,6 +52,12 @@ public class DingusDesktop
 				// TODO Auto-generated method stub
 				
 			}
+
+			@Override
+			public boolean isLoggingIn() {
+				// TODO Auto-generated method stub
+				return false;
+			}
 		}), "Dingus", 1280, 720, true);
 	}
 }

@@ -59,6 +59,7 @@ public class MainActivity extends AndroidApplication
 		try {
 			runOnUiThread(new Runnable(){
 				public void run() {
+					Log.d("TAG", "Starting login");
 					gameHelper.beginUserInitiatedSignIn();
 				}
 			});

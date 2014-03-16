@@ -43,4 +43,10 @@ public class FauxActionResolver implements ActionResolver {
 		
 	}
 
+	@Override
+	public boolean isLoggingIn() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

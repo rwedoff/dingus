@@ -16,6 +16,7 @@ public class EscapeWorld extends AbstractWorld
 
 
 	private int clicked = 0;
+	private SpriteWalker player;
 	
 	
 	public EscapeWorld(Dingus game) {
@@ -62,6 +63,22 @@ public class EscapeWorld extends AbstractWorld
 					b.setRotation(0);
 					addActor(b);
 				}
+				
+				TextureRegion[] regions = 
+					{
+						new TextureRegion(atlas.findRegion("playerSprite1")),
+						new TextureRegion(atlas.findRegion("playerSprite2")),
+						new TextureRegion(atlas.findRegion("playerSprite3")),
+						new TextureRegion(atlas.findRegion("playerSprite4")),
+						new TextureRegion(atlas.findRegion("playerSprite5")),
+						new TextureRegion(atlas.findRegion("playerSprite6")),
+						new TextureRegion(atlas.findRegion("playerSprite7")),
+						new TextureRegion(atlas.findRegion("playerSprite8")),
+					};
+				
+				player = new SpriteWalker(regions, .125f);
+				player.setPosition(game.getWidth()/6 - player.getWidth()/2, floorHeight);
+				addActor(player);
 	}
 
 	
@@ -74,7 +91,8 @@ public class EscapeWorld extends AbstractWorld
 			
 			clicked++;
 			System.out.println("Clicked: "+ clicked);			
-		
+			//Checks to see if lost, then goes to load screen
+			
 		return true;
 	
 	}
@@ -82,14 +100,10 @@ public class EscapeWorld extends AbstractWorld
 	{
 		super.act(delta);
 				
-		//Checks to see if lost, then goes to load screen
-		if(clicked < 15)
-		{
-			System.out.println("LOOSSSSEEEE");
-			game.minigameLost();
-		}
-		clicked = 0;
-		
+		player.update(delta);
+		float xPotential = player.getX() + 230 * delta;
+		player.setX(xPotential);
+			
 	}
 	
 	
@@ -103,7 +117,17 @@ public class EscapeWorld extends AbstractWorld
 	@Override
 	protected void minigameOver() 
 	{
-		game.minigameWon();
+		if(clicked < 15)
+		{
+			System.out.println("LOOSSSSEEEE");
+			game.minigameLost();
+			clicked = 0;
+		}
+		else
+		{
+			game.minigameWon();
+			clicked =0;
+		}
 		
 	}
 
