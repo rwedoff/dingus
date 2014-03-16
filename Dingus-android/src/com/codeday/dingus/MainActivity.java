@@ -28,6 +28,7 @@ public class MainActivity extends AndroidApplication
 		config.useCompass = false;
 		config.useGL20 = true;
 		initialize(new Dingus(this), config);
+		gameHelper.setup(this);
 	}
 	
 	@Override
