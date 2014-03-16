@@ -1,6 +1,7 @@
 package com.codeday.escape;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.codeday.asteroids.Asteroid;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 
@@ -41,6 +42,14 @@ public class EscapeWorld extends AbstractWorld
 					floor.setPosition(j * floorWidth, 0);
 					addActor(floor);
 				}
+				
+				
+				//Creates Blob
+				Blob b = new Blob(atlas.findRegion("meteorBig"), this);
+				b.setPosition((float)Math.random()*this.getWidth() , (float)Math.random()*this.getHeight() + this.getHeight()  - b.getWidth()/2);
+				b.setRotation((float)Math.random()*360);
+				
+				addActor(b);
 	}
 
 	@Override

@@ -64,7 +64,7 @@ public class MenuScreen extends AbstractScreen
 		table.add(startGameButton).size(300, 60).uniform().spaceBottom(10);
 		table.row();
 
-		TextButton achievementButton = new TextButton("Start game", getSkin());
+		TextButton achievementButton = new TextButton("Achievements", getSkin());
 		achievementButton.addListener(new ClickListener()
 		{
 			public void clicked(InputEvent event, float x, float y) 
@@ -76,7 +76,7 @@ public class MenuScreen extends AbstractScreen
 		table.add(achievementButton).size(300, 60).uniform().spaceBottom(10);
 		table.row();
 		
-		TextButton leaderboardButton = new TextButton("Start game", getSkin());
+		TextButton leaderboardButton = new TextButton("Leaderboard", getSkin());
 		leaderboardButton.addListener(new ClickListener()
 		{
 			public void clicked(InputEvent event, float x, float y) 

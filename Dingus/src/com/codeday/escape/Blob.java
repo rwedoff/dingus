@@ -18,17 +18,20 @@ public class Blob extends Image
 		super(texture);
 		this.world = world;
 		
-		//Sets direction of the asteroids
-		Vector2 velocity = new Vector2(0, (float) Math.sin(Math.toRadians(-90))* 225);
+		//Sets direction of the Blobs
+		velocity = new Vector2(0, (float) Math.sin(Math.toRadians(-90))* 225);
 		setOrigin(getX() + getWidth() / 2, getY() + getHeight() / 2);		
 		renderer = new ShapeRenderer();
 	}
+
 	
 	
+
+
 	public void act(float delta)
 	{
 		super.act(delta);
-		//Makes the asteroids move
+		//Makes the Blobs move
 		float xPotential = getX() + velocity.x * delta;
 		float yPotential = getY() + velocity.y * delta;
 		setX(xPotential);
@@ -39,9 +42,31 @@ public class Blob extends Image
 		
 	}
 	
+	/*public void draw(SpriteBatch batch, float parentAlpha)
+	{
+		if (Dingus.DEV_MODE)
+		{
+			batch.end();
+			renderer.setProjectionMatrix(batch.getProjectionMatrix());
+			renderer.setTransformMatrix(batch.getTransformMatrix());
+			renderer.translate(getX(), getY(), 0);
+
+			renderer.begin(ShapeType.Line);
+			renderer.circle(getOriginX(), getOriginY(), getWidth() / 2);
+			renderer.end();
+			batch.begin();
+		}
+		super.draw(batch, parentAlpha);
+	}
+	*/
+	public float getCollisionRadius()
+	{
+		return getHeight() / 2;
+	}
+	
+
 	public Vector2 getVelocity()
 	{
 		return velocity;
 	}
-	
 }
