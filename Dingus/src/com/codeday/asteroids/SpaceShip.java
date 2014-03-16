@@ -20,6 +20,8 @@ public class SpaceShip extends Image
 	
 	public SpaceShip(TextureRegion texture, AbstractWorld world)
 	{
+		
+		
 		super(texture);
 
 		setOrigin(getX() + getWidth() / 2, getY() + getHeight() / 2);
