@@ -23,6 +23,8 @@ public class MainActivity extends AndroidApplication
 {
 	private GameHelper gameHelper;
 	
+	public static final int NUM_SCORES = 5;
+	public static final int DEFAULT_SCORE = 0;
 	public static final int NO_ACTION = 0;
 	public static final int ACHIEVEMENTS_ACTION = 1;
 	public static final int LEADERBOARDS_ACTION = 2;
@@ -81,17 +83,17 @@ public class MainActivity extends AndroidApplication
 		
 		SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
 		ArrayList<Integer> scores = new ArrayList<Integer>();
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < NUM_SCORES; i++)
 		{
-			scores.add(prefs.getInt(i + "", 0));
+			scores.add(prefs.getInt(i + "", DEFAULT_SCORE));
 		}
 		
 		scores.add(score);
 		
 		Collections.sort(scores);
-		
+		Collections.reverse(scores);
 		Editor editor = prefs.edit();
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < NUM_SCORES; i++)
 		{
 			editor.putInt(i + "", scores.get(i));
 		}
@@ -102,9 +104,9 @@ public class MainActivity extends AndroidApplication
 	public ArrayList<Integer> getScoreList() {
 		SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
 		ArrayList<Integer> scores = new ArrayList<Integer>();
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < NUM_SCORES; i++)
 		{
-			scores.add(prefs.getInt(i + "", 0));
+			scores.add(prefs.getInt(i + "", DEFAULT_SCORE));
 		}
 		return scores;
 	}

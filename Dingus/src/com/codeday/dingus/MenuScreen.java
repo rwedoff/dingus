@@ -11,7 +11,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 public class MenuScreen extends AbstractScreen
 {
-	
 	public static final int NO_ACTION = 0;
 	public static final int ACHIEVEMENTS_ACTION = 1;
 	public static final int LEADERBOARDS_ACTION = 2;
