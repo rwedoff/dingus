@@ -157,112 +157,126 @@ filter: Nearest,Nearest
 repeat: none
 2
   rotate: false
-  xy: 902, 52
+  xy: 902, 72
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 3
   rotate: false
-  xy: 895, 900
+  xy: 895, 920
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
+Blob
+  rotate: false
+  xy: 767, 11
+  size: 100, 51
+  orig: 100, 51
+  offset: 0, 0
+  index: -1
+DingusShip
+  rotate: false
+  xy: 378, 74
+  size: 91, 92
+  orig: 91, 92
+  offset: 0, 0
+  index: -1
 Explosion11
   rotate: false
-  xy: 0, 575
+  xy: 0, 595
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion12
   rotate: false
-  xy: 477, 154
+  xy: 477, 174
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion13
   rotate: false
-  xy: 0, 148
+  xy: 0, 168
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 RedButton-Active
   rotate: false
-  xy: 477, 581
+  xy: 477, 601
   size: 416, 419
   orig: 416, 419
   offset: 0, 0
   index: -1
 backgroundColor
   rotate: false
-  xy: 477, 2
+  xy: 477, 22
   size: 150, 150
   orig: 150, 150
   offset: 0, 0
   index: -1
 circle
   rotate: false
-  xy: 895, 798
+  xy: 895, 818
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 enemyShip
   rotate: false
-  xy: 902, 0
+  xy: 629, 9
   size: 98, 50
   orig: 98, 50
   offset: 0, 0
   index: -1
-enemyUFO
+ground_cave
   rotate: false
-  xy: 378, 55
-  size: 91, 91
-  orig: 91, 91
+  xy: 902, 0
+  size: 70, 70
+  orig: 70, 70
   offset: 0, 0
   index: -1
 meteorBig
   rotate: false
-  xy: 629, 41
+  xy: 629, 61
   size: 136, 111
   orig: 136, 111
   offset: 0, 0
   index: -1
 nextLevel
   rotate: false
-  xy: 0, 46
+  xy: 0, 66
   size: 300, 100
   orig: 300, 100
   offset: 0, 0
   index: -1
 player
   rotate: false
-  xy: 895, 721
+  xy: 895, 741
   size: 99, 75
   orig: 99, 75
   offset: 0, 0
   index: -1
 playerDamaged
   rotate: false
-  xy: 895, 644
+  xy: 895, 664
   size: 99, 75
   orig: 99, 75
   offset: 0, 0
   index: -1
 playerSprite1
   rotate: false
-  xy: 302, 50
+  xy: 302, 70
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 shield
   rotate: false
-  xy: 767, 44
+  xy: 767, 64
   size: 133, 108
   orig: 133, 108
   offset: 0, 0
@@ -300,6 +314,13 @@ Explosion17
   orig: 475, 425
   offset: 0, 0
   index: -1
+enemyUFO
+  rotate: false
+  xy: 302, 9
+  size: 91, 91
+  orig: 91, 91
+  offset: 0, 0
+  index: -1
 playerDied
   rotate: false
   xy: 0, 0
@@ -309,63 +330,63 @@ playerDied
   index: -1
 playerLeft
   rotate: false
-  xy: 606, 23
+  xy: 395, 23
   size: 90, 77
   orig: 90, 77
   offset: 0, 0
   index: -1
 playerRight
   rotate: false
-  xy: 698, 23
+  xy: 487, 23
   size: 90, 77
   orig: 90, 77
   offset: 0, 0
   index: -1
 playerSprite2
   rotate: false
-  xy: 302, 4
+  xy: 579, 4
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite8
   rotate: false
-  xy: 302, 4
+  xy: 579, 4
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite3
   rotate: false
-  xy: 378, 4
+  xy: 655, 4
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite7
   rotate: false
-  xy: 378, 4
+  xy: 655, 4
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite4
   rotate: false
-  xy: 454, 4
+  xy: 731, 4
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite6
   rotate: false
-  xy: 454, 4
+  xy: 731, 4
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite5
   rotate: false
-  xy: 530, 4
+  xy: 807, 4
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
@@ -450,35 +471,42 @@ filter: Nearest,Nearest
 repeat: none
 Explosion8
   rotate: false
-  xy: 0, 427
+  xy: 0, 585
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion9
   rotate: false
-  xy: 0, 0
+  xy: 0, 158
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
+SkyBackground
+  rotate: false
+  xy: 477, 452
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
 androidButton
   rotate: false
-  xy: 477, 552
+  xy: 477, 710
   size: 400, 300
   orig: 400, 300
   offset: 0, 0
   index: -1
 playerSprites
   rotate: false
-  xy: 477, 100
+  xy: 477, 0
   size: 296, 192
   orig: 296, 192
   offset: 0, 0
   index: -1
 starBackground
   rotate: false
-  xy: 477, 294
+  xy: 477, 194
   size: 254, 256
   orig: 254, 256
   offset: 0, 0

@@ -1,6 +1,7 @@
 package com.codeday.dingus;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
@@ -14,6 +15,12 @@ public class MainActivity extends AndroidApplication
 {
 	private GameHelper gameHelper;
 	
+	public static final int NO_ACTION = 0;
+	public static final int ACHIEVEMENTS_ACTION = 1;
+	public static final int LEADERBOARDS_ACTION = 2;
+	
+	private int pendingAction = NO_ACTION;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -26,7 +33,8 @@ public class MainActivity extends AndroidApplication
 		config.useAccelerometer = true;
 		config.useCompass = false;
 		config.useGL20 = true;
-		initialize(new Dingus(), config);
+		initialize(new Dingus(this), config);
+		gameHelper.setup(this);
 	}
 	
 	@Override
@@ -36,6 +44,13 @@ public class MainActivity extends AndroidApplication
 
 	@Override
 	public void loginGPGS() {
+		loginGPGS(NO_ACTION);
+	}
+
+	@Override
+	public void loginGPGS(int action) {
+		// TODO Auto-generated method stub
+		pendingAction = action;
 		try {
 			runOnUiThread(new Runnable(){
 				public void run() {
@@ -45,7 +60,7 @@ public class MainActivity extends AndroidApplication
 		} catch (final Exception ex) {
 		}
 	}
-
+	
 	@Override
 	public void submitScoreGPGS(int score) {
 		gameHelper.getGamesClient().submitScore(getString(R.string.leaderboard_id), score);		
@@ -69,10 +84,24 @@ public class MainActivity extends AndroidApplication
 	@Override
 	public void onSignInFailed() {
 		// TODO Auto-generated method stub
+		
+		Toast.makeText(this, "Sign in failed", Toast.LENGTH_LONG).show();
 	}
 
 	@Override
 	public void onSignInSucceeded() {
 		// TODO Auto-generated method stub
+		Toast.makeText(this, "Sign in succeeded!", Toast.LENGTH_LONG).show();
+		switch (pendingAction) {
+		case ACHIEVEMENTS_ACTION:
+			getAchievementsGPGS();
+			break;
+		case LEADERBOARDS_ACTION:
+			getLeaderboardGPGS();
+			break;
+		default:
+			break;
+		}
+
 	}
 }
