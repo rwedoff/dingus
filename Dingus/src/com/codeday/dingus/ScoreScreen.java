@@ -1,5 +1,7 @@
 package com.codeday.dingus;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -7,21 +9,15 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
-public class MenuScreen extends AbstractScreen
-{
+public class ScoreScreen extends AbstractScreen
+{	
 	
-	public static final int NO_ACTION = 0;
-	public static final int ACHIEVEMENTS_ACTION = 1;
-	public static final int LEADERBOARDS_ACTION = 2;
-	
-	
-	public MenuScreen(Dingus game)
+	public ScoreScreen(Dingus game)
 	{
-		super(game);
-		
-		game.setLives(3);
+		super(game);		
 	}
 
 	@Override
@@ -51,35 +47,29 @@ public class MenuScreen extends AbstractScreen
 				table.addActor(background);
 			}
 		}
-		Image t = new Image(new Texture(
-				Gdx.files.internal("images/title.png")));
-		t.setFillParent(true);
-//		t.setPosition(game.getWidth() / 2 - t.getWidth() / 2, game.getHeight() / 2 - t.getHeight() / 2);
-		table.addActor(t);
-		table.add("").spaceBottom(300);
-		table.row();
 		
 		// register the button "start game"
-		TextButton startGameButton = new TextButton("Start game", getSkin());
-		startGameButton.addListener(new ClickListener()
-		{
-			public void clicked(InputEvent event, float x, float y) 
-			{
-				game.nextMinigame();
-		    }
-		});
-		table.add(startGameButton).size(300, 60).uniform().spaceBottom(10);
-		table.row();
+		TextField highscoresText = new TextField("High Scores:", getSkin());
 		
-		TextButton leaderboardButton = new TextButton("High Scores", getSkin());
-		leaderboardButton.addListener(new ClickListener()
+		table.add(highscoresText).size(300, 60).uniform().spaceBottom(10);
+		table.row();
+		ArrayList<Integer> scores = game.getActionResolver().getScoreList();
+		
+		for(int i = 0; i < scores.size(); i++) {
+			table.add(new TextField(i + ". - " + scores.get(i), getSkin()))
+				.size(300, 60).uniform().spaceBottom(10);
+			table.row();
+		}
+		
+		TextButton backToMenuButton = new TextButton("Back", getSkin());
+		backToMenuButton.addListener(new ClickListener()
 		{
 			public void clicked(InputEvent event, float x, float y) 
 			{
-				game.setScreen(new ScoreScreen(game));
+				game.setScreen(new MenuScreen(game));
 		    }
 		});
-		table.add(leaderboardButton).size(300, 60).uniform().spaceBottom(10);
+		table.add(backToMenuButton).size(300, 60).uniform().spaceBottom(10);
 		table.row();
 	}
 	
