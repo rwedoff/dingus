@@ -431,8 +431,7 @@ public class World extends Stage
 		if (Math.random() > 0.5) // Randomly selects if it is shield or shooting
 									// power up
 		{
-			ShootPowerUp spu = new ShootPowerUp(
-					atlas.findRegion("powerupRedWeapon"), this, player);
+			ShootPowerUp spu = new ShootPowerUp(atlas.findRegion("powerupRedWeapon"), this, player);
 			spu.setPosition(x, y);
 			powerups.add(spu);
 			addActor(spu);

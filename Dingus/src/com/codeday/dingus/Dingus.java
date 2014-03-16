@@ -5,6 +5,9 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.FPSLogger;
+import com.codeday.asteroids.AsteroidsWorld;
+import com.codeday.asteroids.asteroidsMinigame;
+
 import com.codeday.loading.LoadingScreen;
 import com.codeday.loading.LoadingWorld;
 import com.codeday.selfdestructminigame.SelfDestructMinigame;
@@ -65,13 +68,19 @@ public class Dingus extends Game
 		fpsLogger = new FPSLogger();
 	}
 
+	
+	//SELECTS MINI GAME
 	public void nextMinigame() 
 	{
 		int rand = (int) (Math.random() * 100);
 		
-		if (rand < 100)
+		if (rand == 100)
 		{
 			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), 5000));
+		}
+		else
+		{
+			setScreen(new asteroidsMinigame(this, new AsteroidsWorld(this), 5000));
 		}
 	}
 
