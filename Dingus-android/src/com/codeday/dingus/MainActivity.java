@@ -90,11 +90,13 @@ public class MainActivity extends AndroidApplication
 		// TODO Auto-generated method stub
 		System.out.println("Login FAILED! :-(");
 		Toast.makeText(this, "Sign in failed", Toast.LENGTH_LONG).show();
+		pendingAction = NO_ACTION;
 	}
 
 	@Override
 	public void onSignInSucceeded() {
 		System.out.println("Login Succeeded!");
+		pendingAction = NO_ACTION;
 		// TODO Auto-generated method stub
 		Toast.makeText(this, "Sign in succeeded!", Toast.LENGTH_LONG).show();
 		switch (pendingAction) {
