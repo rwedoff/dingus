@@ -100,9 +100,10 @@ public class LoadingWorld extends AbstractWorld
 			Skin skin = new Skin(skinFile);
 
 		
-		Label scoreLabel = new Label(game.getScore() + "", skin);
+		Label scoreLabel = new Label("Score: " + game.getScore(), skin);
 		scoreLabel.size(300, 60);
-		scoreLabel.setPosition(10, 10);
+		scoreLabel.setFontScale(20);
+		scoreLabel.setPosition(10, this.getHeight() - 50);
 		addActor(scoreLabel);
 		
 		if(newLives == 0)
