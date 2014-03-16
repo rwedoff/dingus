@@ -192,9 +192,16 @@ Blob
   index: -1
 DingusShip
   rotate: false
-  xy: 378, 74
+  xy: 302, 2
   size: 91, 92
   orig: 91, 92
+  offset: 0, 0
+  index: -1
+Dodge
+  rotate: false
+  xy: 302, 96
+  size: 150, 70
+  orig: 150, 70
   offset: 0, 0
   index: -1
 Explosion11
@@ -281,13 +288,6 @@ playerDamaged
   orig: 99, 75
   offset: 0, 0
   index: -1
-playerSprite1
-  rotate: false
-  xy: 302, 70
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
 shield
   rotate: false
   xy: 767, 64
@@ -302,105 +302,126 @@ filter: Nearest,Nearest
 repeat: none
 Explosion14
   rotate: false
-  xy: 0, 529
+  xy: 0, 592
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion15
   rotate: false
-  xy: 0, 102
+  xy: 477, 592
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion16
   rotate: false
-  xy: 477, 529
+  xy: 0, 165
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion17
   rotate: false
-  xy: 477, 102
+  xy: 477, 165
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
+Tap
+  rotate: false
+  xy: 302, 93
+  size: 150, 70
+  orig: 150, 70
+  offset: 0, 0
+  index: -1
+cloud1
+  rotate: false
+  xy: 302, 20
+  size: 128, 71
+  orig: 128, 71
+  offset: 0, 0
+  index: -1
 enemyUFO
   rotate: false
-  xy: 302, 9
+  xy: 432, 0
   size: 91, 91
   orig: 91, 91
   offset: 0, 0
   index: -1
 playerDied
   rotate: false
-  xy: 0, 0
+  xy: 0, 63
   size: 300, 100
   orig: 300, 100
   offset: 0, 0
   index: -1
 playerLeft
   rotate: false
-  xy: 395, 23
+  xy: 905, 86
   size: 90, 77
   orig: 90, 77
   offset: 0, 0
   index: -1
 playerRight
   rotate: false
-  xy: 487, 23
+  xy: 905, 7
   size: 90, 77
   orig: 90, 77
   offset: 0, 0
   index: -1
+playerSprite1
+  rotate: false
+  xy: 525, 67
+  size: 74, 96
+  orig: 74, 96
+  offset: 0, 0
+  index: -1
 playerSprite2
   rotate: false
-  xy: 579, 4
+  xy: 601, 67
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite8
   rotate: false
-  xy: 579, 4
+  xy: 601, 67
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite3
   rotate: false
-  xy: 655, 4
+  xy: 677, 67
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite7
   rotate: false
-  xy: 655, 4
+  xy: 677, 67
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite4
   rotate: false
-  xy: 731, 4
+  xy: 753, 67
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite6
   rotate: false
-  xy: 731, 4
+  xy: 753, 67
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 playerSprite5
   rotate: false
-  xy: 807, 4
+  xy: 829, 67
   size: 74, 96
   orig: 74, 96
   offset: 0, 0

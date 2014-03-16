@@ -13,13 +13,13 @@ public class Blob extends Image
 	private AbstractWorld world;
 	private ShapeRenderer renderer = new ShapeRenderer();
 
-	public Blob(TextureRegion texture, AbstractWorld world)
+	public Blob(TextureRegion texture, AbstractWorld world, int speed)
 	{
 		super(texture);
 		this.world = world;
 		
 		//Sets direction of the Blobs
-		velocity = new Vector2((float) Math.sin(Math.toRadians(90))* 225, 0);
+		velocity = new Vector2((float) Math.sin(Math.toRadians(90))* speed, 0);
 		setOrigin(getX() + getWidth() / 2, getY() + getHeight() / 2);		
 		renderer = new ShapeRenderer();
 	}
