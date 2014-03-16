@@ -74,7 +74,7 @@ public class Dingus extends Game
 	{
 		int rand = (int) (Math.random() * 100);
 		
-		if (rand == 100)
+		if (rand < 100)
 		{
 			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), 5000));
 		}
