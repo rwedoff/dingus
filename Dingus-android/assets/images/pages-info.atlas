@@ -24,11 +24,25 @@ Explosion10
   orig: 475, 425
   offset: 0, 0
   index: -1
+backgroundTimerBar
+  rotate: false
+  xy: 954, 552
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
 circuitBoard2
   rotate: false
   xy: 0, 0
   size: 254, 191
   orig: 254, 191
+  offset: 0, 0
+  index: -1
+foregroundTimerBar
+  rotate: false
+  xy: 954, 486
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
 gameOver
@@ -40,42 +54,42 @@ gameOver
   index: -1
 laserGreen
   rotate: false
-  xy: 954, 295
+  xy: 979, 199
   size: 9, 33
   orig: 9, 33
   offset: 0, 0
   index: -1
 laserGreenShot
   rotate: false
-  xy: 954, 562
+  xy: 954, 430
   size: 56, 54
   orig: 56, 54
   offset: 0, 0
   index: -1
 laserRed
   rotate: false
-  xy: 954, 260
+  xy: 990, 266
   size: 9, 33
   orig: 9, 33
   offset: 0, 0
   index: -1
 laserRedShot
   rotate: false
-  xy: 954, 506
+  xy: 954, 374
   size: 56, 54
   orig: 56, 54
   offset: 0, 0
   index: -1
 life
   rotate: false
-  xy: 954, 433
+  xy: 954, 301
   size: 35, 27
   orig: 35, 27
   offset: 0, 0
   index: -1
 meteorSmall
   rotate: false
-  xy: 954, 462
+  xy: 954, 330
   size: 44, 42
   orig: 44, 42
   offset: 0, 0
@@ -96,7 +110,7 @@ pauseButton
   index: -1
 powerupRedWeapon
   rotate: false
-  xy: 954, 398
+  xy: 954, 266
   size: 34, 33
   orig: 34, 33
   offset: 0, 0
@@ -110,7 +124,7 @@ selfDestruct
   index: -1
 shieldGold
   rotate: false
-  xy: 954, 366
+  xy: 954, 234
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
@@ -124,14 +138,14 @@ speedLine
   index: -1
 starBig
   rotate: false
-  xy: 954, 343
+  xy: 954, 211
   size: 23, 21
   orig: 23, 21
   offset: 0, 0
   index: -1
 starSmall
   rotate: false
-  xy: 954, 330
+  xy: 954, 198
   size: 11, 11
   orig: 11, 11
   offset: 0, 0

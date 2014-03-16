@@ -131,7 +131,6 @@ public class LoadingWorld extends AbstractWorld
 		for (int i = 0; i < sprites.size();i++)
 		{
 			SpriteWalker w = sprites.get(i);
-			w.update(delta);
 		}
 	}
 

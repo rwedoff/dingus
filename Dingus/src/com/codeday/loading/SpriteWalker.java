@@ -23,7 +23,7 @@ public class SpriteWalker extends Image {
 	    walkAnimation = new Animation(frametime,regions);
 	}
 	
-	public void update(float delta)
+	public void act(float delta)
 	{
         TextureRegion frame;
         
@@ -34,4 +34,5 @@ public class SpriteWalker extends Image {
         // times as the current region (the call will be ignored in this case)
         this.setDrawable(new TextureRegionDrawable(frame));
 	}
+	
 }
