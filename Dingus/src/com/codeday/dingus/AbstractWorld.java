@@ -33,8 +33,8 @@ public abstract class AbstractWorld extends Stage implements InputProcessor
 		backgroundTimer.setPosition(getWidth() / 2 - backgroundTimer.getWidth() / 2, getHeight() - backgroundTimer.getHeight() * 2);
 		
 		foregroundTimer = new Image(atlas.findRegion("foregroundTimerBar"));
-		foregroundTimer.setSize(getWidth() / 2 - 20, getHeight() / 20 - 10);
-		foregroundTimer.setPosition(getWidth() / 2 - foregroundTimer.getWidth() / 2, getHeight() - foregroundTimer.getHeight() * 2.5f);
+		foregroundTimer.setSize(getWidth() / 2, getHeight() / 20);
+		foregroundTimer.setPosition(backgroundTimer.getX(), backgroundTimer.getY());
 		initialWidth = foregroundTimer.getWidth();
 		
 		setupLevel();

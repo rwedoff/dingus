@@ -97,9 +97,9 @@ public class SelfDestructWorld extends AbstractWorld
 	{
 		super.act(delta);
 		
-		if (explosion != null)
+		if(explosion != null)
 		{
-			//explosion.update(delta);
+			explosion.update(delta);
 		}
 	}
 
