@@ -1,6 +1,7 @@
 package com.codeday.dingus;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -62,6 +63,7 @@ public class MainActivity extends AndroidApplication
 				}
 			});
 		} catch (final Exception ex) {
+			Log.e("TAG", ex.toString());
 		}
 	}
 	
@@ -88,14 +90,14 @@ public class MainActivity extends AndroidApplication
 	@Override
 	public void onSignInFailed() {
 		// TODO Auto-generated method stub
-		System.out.println("Login FAILED! :-(");
+		Log.d("TAG", "Login FAILED! :-(");
 		Toast.makeText(this, "Sign in failed", Toast.LENGTH_LONG).show();
 		pendingAction = NO_ACTION;
 	}
 
 	@Override
 	public void onSignInSucceeded() {
-		System.out.println("Login Succeeded!");
+		Log.d("TAG", "Login Succeeded!");
 		pendingAction = NO_ACTION;
 		// TODO Auto-generated method stub
 		Toast.makeText(this, "Sign in succeeded!", Toast.LENGTH_LONG).show();
