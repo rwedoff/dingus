@@ -26,7 +26,7 @@ public class Dingus extends Game
 	public static final String LOG = Dingus.class.getSimpleName();
 
 	// whether we are in development mode
-	public static final boolean DEV_MODE = true;
+	public static final boolean DEV_MODE = false;
 
 	// a libgdx helper class that logs the current FPS each second
 	private FPSLogger fpsLogger;

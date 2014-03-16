@@ -37,4 +37,10 @@ public class FauxActionResolver implements ActionResolver {
 		System.out.println("getAchievementsGPGS");
 	}
 
+	@Override
+	public void loginGPGS(int action) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

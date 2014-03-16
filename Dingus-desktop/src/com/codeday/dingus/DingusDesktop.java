@@ -46,6 +46,12 @@ public class DingusDesktop
 				// TODO Auto-generated method stub
 				System.out.println("Not supported");
 			}
+
+			@Override
+			public void loginGPGS(int action) {
+				// TODO Auto-generated method stub
+				
+			}
 		}), "Dingus", 1280, 720, true);
 	}
 }
