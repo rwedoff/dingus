@@ -23,7 +23,7 @@ public class SpriteWalker extends Image {
 	    walkAnimation = new Animation(frametime,regions);
 	}
 	
-	public void update(float delta, LoadingWorld world)
+	public void update(float delta)
 	{
         TextureRegion frame;
         

@@ -1,14 +1,20 @@
 package com.codeday.selfdestructminigame;
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
+import com.badlogic.gdx.scenes.scene2d.Action;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
+import com.codeday.loading.SpriteWalker;
 
 public class SelfDestructWorld extends AbstractWorld
 {
 
 	private Button button;
+	private SpriteWalker walker;
+	private SpriteWalker explosion;
 
 	public SelfDestructWorld(Dingus game) 
 	{
@@ -45,8 +51,44 @@ public class SelfDestructWorld extends AbstractWorld
 		if (this.button.clicked(screenX, getHeight() - screenY))
 		{
 			System.out.println("OH NO!");
-			game.minigameLost();
 			
+			TextureRegion[] regions2 = 
+				{
+					new TextureRegion(atlas.findRegion("Explosion1")),
+					new TextureRegion(atlas.findRegion("Explosion2")),
+					new TextureRegion(atlas.findRegion("Explosion3")),
+					new TextureRegion(atlas.findRegion("Explosion4")),
+					new TextureRegion(atlas.findRegion("Explosion5")),
+					new TextureRegion(atlas.findRegion("Explosion6")),
+					new TextureRegion(atlas.findRegion("Explosion7")),
+					new TextureRegion(atlas.findRegion("Explosion8")),
+					new TextureRegion(atlas.findRegion("Explosion9")),
+					new TextureRegion(atlas.findRegion("Explosion10")),
+					new TextureRegion(atlas.findRegion("Explosion11")),
+					new TextureRegion(atlas.findRegion("Explosion12")),
+					new TextureRegion(atlas.findRegion("Explosion13")),
+					new TextureRegion(atlas.findRegion("Explosion14")),
+					new TextureRegion(atlas.findRegion("Explosion15")),
+					new TextureRegion(atlas.findRegion("Explosion16")),
+					new TextureRegion(atlas.findRegion("Explosion17")),
+					new TextureRegion(atlas.findRegion("Explosion18")),
+					new TextureRegion(atlas.findRegion("Explosion19")),
+					new TextureRegion(atlas.findRegion("Explosion20")),
+					};
+			explosion = new SpriteWalker(regions2, .05f);
+			explosion.setPosition( -1*explosion.getWidth()/2 + this.getWidth()/2, 
+					getHeight() / 2 - explosion.getHeight() / 2);
+			explosion.addAction(Actions.sequence(Actions.delay(1f), new Action()
+			{
+				public boolean act(float delta) 
+				{
+					game.minigameLost();
+					return true;
+				}
+				
+			}));
+			addActor(explosion);
+				
 		}
 		return true;
 	}
@@ -54,6 +96,9 @@ public class SelfDestructWorld extends AbstractWorld
 	public void act(float delta)
 	{
 		super.act(delta);
+		
+		if (explosion != null)
+			explosion.update(delta);
 	}
 
 	@Override
