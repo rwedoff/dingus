@@ -18,7 +18,6 @@ public class MainActivity extends AndroidApplication
 	public static final int NO_ACTION = 0;
 	public static final int ACHIEVEMENTS_ACTION = 1;
 	public static final int LEADERBOARDS_ACTION = 2;
-	
 	private int pendingAction = NO_ACTION;
 	
 	@Override
@@ -35,6 +34,11 @@ public class MainActivity extends AndroidApplication
 		config.useGL20 = true;
 		initialize(new Dingus(this), config);
 		gameHelper.setup(this);
+	}
+	
+	@Override
+	public boolean isLoggingIn() {
+		return (pendingAction == NO_ACTION ? false : true);
 	}
 	
 	@Override
@@ -84,12 +88,13 @@ public class MainActivity extends AndroidApplication
 	@Override
 	public void onSignInFailed() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Login FAILED! :-(");
 		Toast.makeText(this, "Sign in failed", Toast.LENGTH_LONG).show();
 	}
 
 	@Override
 	public void onSignInSucceeded() {
+		System.out.println("Login Succeeded!");
 		// TODO Auto-generated method stub
 		Toast.makeText(this, "Sign in succeeded!", Toast.LENGTH_LONG).show();
 		switch (pendingAction) {
