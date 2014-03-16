@@ -11,6 +11,12 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 public class MenuScreen extends AbstractScreen
 {
+	
+	public static final int NO_ACTION = 0;
+	public static final int ACHIEVEMENTS_ACTION = 1;
+	public static final int LEADERBOARDS_ACTION = 2;
+	
+	
 	public MenuScreen(Dingus game)
 	{
 		super(game);
@@ -70,7 +76,7 @@ public class MenuScreen extends AbstractScreen
 			public void clicked(InputEvent event, float x, float y) 
 			{
 				if (game.actionResolver.getSignedInGPGS()) game.actionResolver.getAchievementsGPGS();
-				else game.actionResolver.loginGPGS();
+				else game.actionResolver.loginGPGS(ACHIEVEMENTS_ACTION);
 		    }
 		});
 		table.add(achievementButton).size(300, 60).uniform().spaceBottom(10);
@@ -82,7 +88,7 @@ public class MenuScreen extends AbstractScreen
 			public void clicked(InputEvent event, float x, float y) 
 			{
 				if (game.actionResolver.getSignedInGPGS()) game.actionResolver.getLeaderboardGPGS();
-				else game.actionResolver.loginGPGS();
+				else game.actionResolver.loginGPGS(LEADERBOARDS_ACTION);
 		    }
 		});
 		table.add(leaderboardButton).size(300, 60).uniform().spaceBottom(10);
