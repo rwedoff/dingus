@@ -81,20 +81,36 @@ public class AsteroidsWorld extends AbstractWorld
 		
 		float thrust = 0;
 		
-		thrust += 200 * Gdx.input.getAccelerometerY();
+		float tilt = Gdx.input.getAccelerometerY();
+		if(tilt > 0)
+		{
+			if(s.getX() < this.getWidth()-s.getHeight())
+			{
+				thrust += 200 * tilt;
+			}
 		
+		}
+		if(tilt < 0)
+		{
+			if(s.getX() > 0 + s.getHeight())
+				thrust += 200* tilt;
+		}
 		
 		if (controller.isKeyDown(Keys.RIGHT) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
 		{
-			
-			thrust = 300;
+			if(s.getX() < this.getWidth()-s.getHeight())
+				thrust = 300;
 		}
 		if (controller.isKeyDown(Keys.LEFT) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
 		{
-			
-			thrust = -300;
+			if(s.getX() > 0)
+				thrust = -300;
 		}
-		s.update( delta, this,   thrust);
+		
+			s.update( delta, this, thrust);
+		
+		
+			
 	
 		
 	}
@@ -104,7 +120,11 @@ public class AsteroidsWorld extends AbstractWorld
 	public void act(float delta)
 	{
 		super.act(delta);
-		spaceControls(delta);
+		
+			spaceControls(delta);
+		
+		
+		
 		
 		
 		//Checks to see if lost, then goes to load screen
