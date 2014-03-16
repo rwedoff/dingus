@@ -15,9 +15,9 @@ public class EscapeWorld extends AbstractWorld
 	@Override
 	protected void setupLevel() 
 	{
-				//Background
-				int tileWidth = atlas.findRegion("circuitBoard2").getRegionWidth();
-				int tileHeight = atlas.findRegion("circuitBoard2").getRegionHeight();
+				//Creates Background
+				int tileWidth = atlas.findRegion("SkyBackground").getRegionWidth();
+				int tileHeight = atlas.findRegion("SkyBackground").getRegionHeight();
 				Image background;
 				for (int x = 0; x * tileWidth < this.getWidth(); x++)
 				{
@@ -25,12 +25,22 @@ public class EscapeWorld extends AbstractWorld
 					{
 
 						background = new Image(this.getAtlas().findRegion(
-								"circuitBoard2"));
+								"SkyBackground"));
 						background.setPosition(x * tileWidth, y * tileHeight);
 						addActor(background);
 					}
 				}
-		
+				
+				//Creates Floor
+				int floorWidth = atlas.findRegion("ground_cave").getRegionWidth();
+				int floorHeight = atlas.findRegion("ground_cave").getRegionHeight();
+				Image floor;
+				for (int j = 0; j * floorWidth < this.getWidth(); j++)
+				{
+					floor = new Image(this.getAtlas().findRegion("ground_cave"));
+					floor.setPosition(j * floorWidth, 0);
+					addActor(floor);
+				}
 	}
 
 	@Override
