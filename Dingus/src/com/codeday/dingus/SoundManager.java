@@ -19,10 +19,8 @@ public class SoundManager implements
 	 */
 	public enum SoundEffect
 	{
-		LASER("music/laser1.mp3"),
-		GAME_OVER("music/GameOver.ogg"),
-		YOU_DIED("music/youDied.ogg"),
-		MENU_SOUND("music/MenuSound.ogg");
+		
+		GAME_OVER("music/GameOver.ogg");
 
 		private final String fileName;
 

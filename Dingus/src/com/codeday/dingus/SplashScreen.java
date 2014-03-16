@@ -74,7 +74,7 @@ public class SplashScreen extends AbstractScreen
 		// making the image completely transparent
 		splashImage.getColor().a = 0f;
 
-		game.getSoundManager().play(SoundEffect.MENU_SOUND);
+//		game.getSoundManager().play(SoundEffect.MENU_SOUND);
 		// configure the fade-in/out effect on the splash image
 		splashImage.addAction(sequence(fadeIn(1.5f), delay(2.75f),
 				fadeOut(1.75f), new Action()

@@ -102,8 +102,8 @@ public class LoadingWorld extends AbstractWorld
 		
 		Label scoreLabel = new Label("Score: " + game.getScore(), skin);
 		scoreLabel.size(300, 60);
-		scoreLabel.setFontScale(20);
-		scoreLabel.setPosition(10, this.getHeight() - 50);
+		scoreLabel.setFontScale(3);
+		scoreLabel.setPosition(10, this.getHeight() - 80);
 		addActor(scoreLabel);
 		
 		if(newLives == 0)
