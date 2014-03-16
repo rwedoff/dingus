@@ -15,6 +15,8 @@ import com.codeday.loading.LoadingWorld;
 import com.codeday.selfdestructminigame.SelfDestructMinigame;
 import com.codeday.selfdestructminigame.SelfDestructWorld;
 
+import dingusInterfaces.ActionResolver;
+
 /**
  * The game's main class, called as application events are fired.
  */
@@ -40,9 +42,12 @@ public class Dingus extends Game
 	private int height;
 	
 	private int lives = 3;
+	
+	ActionResolver actionResolver;
 
-	public Dingus()
+	public Dingus(ActionResolver actionResolver)
 	{
+		this.actionResolver = actionResolver;
 	}
 
 	// Game-related methods

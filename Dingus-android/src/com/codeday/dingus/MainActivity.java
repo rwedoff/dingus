@@ -1,6 +1,7 @@
 package com.codeday.dingus;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
@@ -26,7 +27,7 @@ public class MainActivity extends AndroidApplication
 		config.useAccelerometer = true;
 		config.useCompass = false;
 		config.useGL20 = true;
-		initialize(new Dingus(), config);
+		initialize(new Dingus(this), config);
 	}
 	
 	@Override
@@ -69,10 +70,13 @@ public class MainActivity extends AndroidApplication
 	@Override
 	public void onSignInFailed() {
 		// TODO Auto-generated method stub
+		Toast.makeText(this, "Sign in failed", Toast.LENGTH_LONG);
 	}
 
 	@Override
 	public void onSignInSucceeded() {
 		// TODO Auto-generated method stub
+		Toast.makeText(this, "Sign in succeeded!", Toast.LENGTH_LONG);
+
 	}
 }
