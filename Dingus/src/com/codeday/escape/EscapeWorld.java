@@ -121,7 +121,7 @@ public class EscapeWorld extends AbstractWorld
 			System.out.println("Clicked: "+ clicked);			
 			//Checks to see if lost, then goes to load screen
 			
-			player.setVelocity(450,0);
+			player.setVelocity(400,0);
 			lastClick = System.currentTimeMillis();
 			//float xPotential = player.getX() + 50;
 			//player.setX(xPotential);

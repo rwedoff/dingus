@@ -69,7 +69,7 @@ public class Fly extends Image
 		Point point = new Point(x, y);
 		Point center = new Point(getX() + getImageWidth() / 2, getY() + getImageHeight() / 2);
 		System.out.println("Dist: " + point.distance(center));
-		if (point.distance(center) < getImageHeight() / 2)
+		if (point.distance(center) < getImageHeight())
 			return true;
 		return false;
 	}
