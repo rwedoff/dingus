@@ -44,7 +44,7 @@ public class Asteroid extends Image
 		
 	}
 	
-	/*public void draw(SpriteBatch batch, float parentAlpha)
+/*	public void draw(SpriteBatch batch, float parentAlpha)
 	{
 		if (Dingus.DEV_MODE)
 		{
@@ -54,7 +54,7 @@ public class Asteroid extends Image
 			renderer.translate(getX(), getY(), 0);
 
 			renderer.begin(ShapeType.Line);
-			renderer.circle(getOriginX(), getOriginY(), getWidth() / 2);
+			renderer.circle(getOriginX(), getOriginY(), getHeight() / 2);
 			renderer.end();
 			batch.begin();
 		}

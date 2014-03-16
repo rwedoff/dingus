@@ -80,16 +80,17 @@ public class Dingus extends Game
 	//SELECTS MINI GAME
 	public void nextMinigame() 
 	{
-		int rand = (int) (Math.random() * 100);
-		
-		if (rand < 100)
+		//int rand = (int) (Math.random() * 100);
+		int rand = 33;
+		if (rand == 100)
 		{
 			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), 5000));
 		}
-		else if(rand < 33)
+		else if(rand == 33)
 		{
 			setScreen(new asteroidsMinigame(this, new AsteroidsWorld(this), 5000));
 		}
+		
 		else
 		{
 			setScreen(new EscapeMinigame(this, new EscapeWorld(this), 5000));

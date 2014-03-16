@@ -58,12 +58,12 @@ public class EscapeWorld extends AbstractWorld
 				//Creates Blob
 				for(int k = 0; k < 7; k++)
 				{
-					Blob b = new Blob(atlas.findRegion("Blob"), this);
+					Blob b = new Blob(atlas.findRegion("Blob"), this, 225);
 					b.setPosition((float)Math.random() * -this.getWidth()/2 , floorHeight);
 					b.setRotation(0);
 					addActor(b);
 				}
-				
+				//Creates Dingus
 				TextureRegion[] regions = 
 					{
 						new TextureRegion(atlas.findRegion("playerSprite1")),
@@ -79,6 +79,27 @@ public class EscapeWorld extends AbstractWorld
 				player = new SpriteWalker(regions, .125f);
 				player.setPosition(game.getWidth()/6 - player.getWidth()/2, floorHeight);
 				addActor(player);
+				
+				
+				//Creates Space Ship
+				Image ship = new Image(atlas.findRegion("enemyUFO"));
+				ship.setPosition(this.getWidth() - ship.getHeight(), floorHeight);
+				addActor(ship);
+				
+				//Creates Text
+				Image tap = new Image(atlas.findRegion("Tap"));
+				tap.setPosition(this.getWidth()/2 - tap.getWidth()/2, this.getHeight()/2);
+				addActor(tap);
+				
+				//Creates Cloud
+				for(int k = 0; k < 7; k++)
+				{
+					Blob cloud = new Blob(atlas.findRegion("cloud1"), this, -50);
+					cloud.setPosition((float)Math.random() * this.getWidth() ,(float) Math.random() * this.getHeight() + (floorHeight*3) );
+					cloud.setRotation(0);
+					
+					addActor(cloud);
+				}
 	}
 
 	
@@ -92,7 +113,8 @@ public class EscapeWorld extends AbstractWorld
 			clicked++;
 			System.out.println("Clicked: "+ clicked);			
 			//Checks to see if lost, then goes to load screen
-			
+			float xPotential = player.getX() + 50;
+			player.setX(xPotential);
 		return true;
 	
 	}
@@ -101,8 +123,8 @@ public class EscapeWorld extends AbstractWorld
 		super.act(delta);
 				
 		player.update(delta);
-		float xPotential = player.getX() + 230 * delta;
-		player.setX(xPotential);
+		/*float xPotential = player.getX() + 230 * delta;
+		player.setX(xPotential);*/
 			
 	}
 	

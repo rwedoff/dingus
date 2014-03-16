@@ -52,7 +52,7 @@ public class SpaceShip extends Image
 			Point pCenter = new Point(this.getX() + this.getWidth()/2, this.getY() + this. getHeight()/2);
 			
 			//Inntiates YOU LOSE
-			if(aCenter.distance(pCenter) < this.getWidth()/2 + asteroid.getWidth()/2)
+			if(aCenter.distance(pCenter) < this.getWidth()/2 + asteroid.getHeight()/2)
 			{
 				System.out.println("Asteroid Collided");
 				collided = true;

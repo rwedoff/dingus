@@ -60,6 +60,12 @@ public class AsteroidsWorld extends AbstractWorld
 		s = new SpaceShip(atlas.findRegion("DingusShip"), this);
 		addActor(s);
 		s.setPosition(getWidth() / 2 - s.getWidth() / 2, s.getWidth()/2);
+
+	
+		//Creates Text
+		Image dodge = new Image(atlas.findRegion("Dodge"));
+		dodge.setPosition(this.getWidth()/2 - dodge.getWidth()/2, this.getHeight()/2);
+		addActor(dodge);
 	}
 
 	public ArrayList<Asteroid> getAsteroids()
