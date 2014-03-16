@@ -1,6 +1,7 @@
 package com.codeday.dingus;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -18,7 +19,6 @@ public class MainActivity extends AndroidApplication
 	public static final int NO_ACTION = 0;
 	public static final int ACHIEVEMENTS_ACTION = 1;
 	public static final int LEADERBOARDS_ACTION = 2;
-	
 	private int pendingAction = NO_ACTION;
 	
 	@Override
@@ -35,6 +35,11 @@ public class MainActivity extends AndroidApplication
 		config.useGL20 = true;
 		initialize(new Dingus(this), config);
 		gameHelper.setup(this);
+	}
+	
+	@Override
+	public boolean isLoggingIn() {
+		return (pendingAction == NO_ACTION ? false : true);
 	}
 	
 	@Override
@@ -58,6 +63,7 @@ public class MainActivity extends AndroidApplication
 				}
 			});
 		} catch (final Exception ex) {
+			Log.e("TAG", ex.toString());
 		}
 	}
 	
@@ -84,12 +90,15 @@ public class MainActivity extends AndroidApplication
 	@Override
 	public void onSignInFailed() {
 		// TODO Auto-generated method stub
-		
+		Log.d("TAG", "Login FAILED! :-(");
 		Toast.makeText(this, "Sign in failed", Toast.LENGTH_LONG).show();
+		pendingAction = NO_ACTION;
 	}
 
 	@Override
 	public void onSignInSucceeded() {
+		Log.d("TAG", "Login Succeeded!");
+		pendingAction = NO_ACTION;
 		// TODO Auto-generated method stub
 		Toast.makeText(this, "Sign in succeeded!", Toast.LENGTH_LONG).show();
 		switch (pendingAction) {
