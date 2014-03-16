@@ -1,5 +1,7 @@
 package com.codeday.dingus;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
 import dingusInterfaces.ActionResolver;
@@ -51,6 +53,18 @@ public class DingusDesktop
 			public void loginGPGS(int action) {
 				// TODO Auto-generated method stub
 				
+			}
+
+			@Override
+			public boolean isLoggingIn() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+
+			@Override
+			public ArrayList<Integer> getScoreList() {
+				// TODO Auto-generated method stub
+				return null;
 			}
 		}), "Dingus", 1280, 720, true);
 	}

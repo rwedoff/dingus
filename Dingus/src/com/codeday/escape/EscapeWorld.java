@@ -1,13 +1,24 @@
 package com.codeday.escape;
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Action;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codeday.asteroids.Asteroid;
+import com.codeday.asteroids.SpaceShip;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
+import com.codeday.loading.SpriteWalker;
+
 
 public class EscapeWorld extends AbstractWorld
 {
 
+
+	private int clicked = 0;
+	private SpriteWalker player;
+	
+	
 	public EscapeWorld(Dingus game) {
 		super(game);
 		
@@ -52,8 +63,51 @@ public class EscapeWorld extends AbstractWorld
 					b.setRotation(0);
 					addActor(b);
 				}
+				
+				TextureRegion[] regions = 
+					{
+						new TextureRegion(atlas.findRegion("playerSprite1")),
+						new TextureRegion(atlas.findRegion("playerSprite2")),
+						new TextureRegion(atlas.findRegion("playerSprite3")),
+						new TextureRegion(atlas.findRegion("playerSprite4")),
+						new TextureRegion(atlas.findRegion("playerSprite5")),
+						new TextureRegion(atlas.findRegion("playerSprite6")),
+						new TextureRegion(atlas.findRegion("playerSprite7")),
+						new TextureRegion(atlas.findRegion("playerSprite8")),
+					};
+				
+				player = new SpriteWalker(regions, .125f);
+				player.setPosition(game.getWidth()/6 - player.getWidth()/2, floorHeight);
+				addActor(player);
 	}
 
+	
+	
+
+	public boolean touchDown(int screenX, int screenY, int pointer, int button)
+	{
+		System.out.println(screenX + " , " + screenY);
+		
+			
+			clicked++;
+			System.out.println("Clicked: "+ clicked);			
+			//Checks to see if lost, then goes to load screen
+			
+		return true;
+	
+	}
+	public void act(float delta)
+	{
+		super.act(delta);
+				
+		player.update(delta);
+		float xPotential = player.getX() + 230 * delta;
+		player.setX(xPotential);
+			
+	}
+	
+	
+	
 	@Override
 	public void pause() {
 		// TODO Auto-generated method stub
@@ -61,8 +115,19 @@ public class EscapeWorld extends AbstractWorld
 	}
 
 	@Override
-	protected void minigameOver() {
-		// TODO Auto-generated method stub
+	protected void minigameOver() 
+	{
+		if(clicked < 15)
+		{
+			System.out.println("LOOSSSSEEEE");
+			game.minigameLost();
+			clicked = 0;
+		}
+		else
+		{
+			game.minigameWon();
+			clicked =0;
+		}
 		
 	}
 

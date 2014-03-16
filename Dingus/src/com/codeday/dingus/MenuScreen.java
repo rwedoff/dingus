@@ -76,7 +76,7 @@ public class MenuScreen extends AbstractScreen
 			public void clicked(InputEvent event, float x, float y) 
 			{
 				if (game.actionResolver.getSignedInGPGS()) game.actionResolver.getAchievementsGPGS();
-				else game.actionResolver.loginGPGS(ACHIEVEMENTS_ACTION);
+				else if(!game.actionResolver.isLoggingIn()) game.actionResolver.loginGPGS(ACHIEVEMENTS_ACTION);
 		    }
 		});
 		table.add(achievementButton).size(300, 60).uniform().spaceBottom(10);
@@ -88,7 +88,7 @@ public class MenuScreen extends AbstractScreen
 			public void clicked(InputEvent event, float x, float y) 
 			{
 				if (game.actionResolver.getSignedInGPGS()) game.actionResolver.getLeaderboardGPGS();
-				else game.actionResolver.loginGPGS(LEADERBOARDS_ACTION);
+				else if(!game.actionResolver.isLoggingIn()) game.actionResolver.loginGPGS(LEADERBOARDS_ACTION);
 		    }
 		});
 		table.add(leaderboardButton).size(300, 60).uniform().spaceBottom(10);
