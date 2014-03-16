@@ -19,7 +19,7 @@ public class Blob extends Image
 		this.world = world;
 		
 		//Sets direction of the Blobs
-		velocity = new Vector2(0, (float) Math.sin(Math.toRadians(-90))* 225);
+		velocity = new Vector2((float) Math.sin(Math.toRadians(90))* 225, 0);
 		setOrigin(getX() + getWidth() / 2, getY() + getHeight() / 2);		
 		renderer = new ShapeRenderer();
 	}
@@ -36,8 +36,8 @@ public class Blob extends Image
 		float yPotential = getY() + velocity.y * delta;
 		setX(xPotential);
 		setY(yPotential);
-		float rotation = 360 * 10.0f / 20.0f * delta;
-		rotate(rotation);
+		
+		
 		
 		
 	}

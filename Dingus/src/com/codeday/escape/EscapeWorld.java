@@ -45,11 +45,13 @@ public class EscapeWorld extends AbstractWorld
 				
 				
 				//Creates Blob
-				Blob b = new Blob(atlas.findRegion("meteorBig"), this);
-				b.setPosition((float)Math.random()*this.getWidth() , (float)Math.random()*this.getHeight() + this.getHeight()  - b.getWidth()/2);
-				b.setRotation((float)Math.random()*360);
-				
-				addActor(b);
+				for(int k = 0; k < 7; k++)
+				{
+					Blob b = new Blob(atlas.findRegion("Blob"), this);
+					b.setPosition((float)Math.random() * -this.getWidth()/2 , floorHeight);
+					b.setRotation(0);
+					addActor(b);
+				}
 	}
 
 	@Override

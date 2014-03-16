@@ -169,6 +169,13 @@ repeat: none
   orig: 100, 100
   offset: 0, 0
   index: -1
+Blob
+  rotate: false
+  xy: 767, 11
+  size: 100, 51
+  orig: 100, 51
+  offset: 0, 0
+  index: -1
 DingusShip
   rotate: false
   xy: 378, 74
@@ -220,7 +227,7 @@ circle
   index: -1
 enemyShip
   rotate: false
-  xy: 767, 12
+  xy: 629, 9
   size: 98, 50
   orig: 98, 50
   offset: 0, 0
