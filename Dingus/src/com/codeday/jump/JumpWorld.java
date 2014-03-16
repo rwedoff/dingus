@@ -22,60 +22,60 @@ public class JumpWorld extends AbstractWorld
 	protected void setupLevel() 
 	{
 		//Creates Background
-				int tileWidth = atlas.findRegion("SkyBackground").getRegionWidth();
-				int tileHeight = atlas.findRegion("SkyBackground").getRegionHeight();
-				Image background;
-				for (int x = 0; x * tileWidth < this.getWidth(); x++)
-				{
-					for (int y = 0; y * tileHeight < this.getHeight(); y++)
-					{
+		int tileWidth = atlas.findRegion("SkyBackground").getRegionWidth();
+		int tileHeight = atlas.findRegion("SkyBackground").getRegionHeight();
+		Image background;
+		for (int x = 0; x * tileWidth < this.getWidth(); x++)
+		{
+			for (int y = 0; y * tileHeight < this.getHeight(); y++)
+			{
 
-						background = new Image(this.getAtlas().findRegion(
-								"SkyBackground"));
-						background.setPosition(x * tileWidth, y * tileHeight);
-						addActor(background);
-					}
-				}
-				
-				//Creates Floor
-				int floorWidth = atlas.findRegion("block").getRegionWidth();
-				int floorHeight = atlas.findRegion("block").getRegionHeight();
-				Image floor;
-				for (int j = 0; j * floorWidth < this.getWidth(); j++)
-				{
-					floor = new Image(this.getAtlas().findRegion("block"));
-					floor.setPosition(j * floorWidth, 0);
-					addActor(floor);
-				}
-				
-				
-				
-				//Creates Cloud
-				for(int k = 0; k < 7; k++)
-				{
-					Blob cloud = new Blob(atlas.findRegion("cloud1"), this, -50);
-					cloud.setPosition((float)Math.random() * this.getWidth() ,(float) Math.random() * this.getHeight() + (floorHeight*3) );
-					cloud.setRotation(0);
-					
-					addActor(cloud);
-				}
-				
-				//Creates  Car
-				car = new Car(atlas.findRegion("Car"), this, 300);
-				car.setPosition(0, floorHeight);
-				car.setRotation(0);
-				addActor(car);
+				background = new Image(this.getAtlas().findRegion(
+						"SkyBackground"));
+				background.setPosition(x * tileWidth, y * tileHeight);
+				addActor(background);
+			}
+		}
 		
-				//Creates Dingus
-				dingus = new JumpDingus(atlas.findRegion("playerSprite1"), this);
-				addActor(dingus);
-				dingus.setPosition(getWidth() / 2 - dingus.getWidth() / 2, floorHeight);
-				
-				
-				//Creates Text
-				Image text = new Image(this.getAtlas().findRegion("Quick"));
-				text.setPosition(this.getWidth()/2, this.getHeight()/2);
-				addActor(text);
+		//Creates Floor
+		int floorWidth = atlas.findRegion("block").getRegionWidth();
+		int floorHeight = atlas.findRegion("block").getRegionHeight();
+		Image floor;
+		for (int j = 0; j * floorWidth < this.getWidth(); j++)
+		{
+			floor = new Image(this.getAtlas().findRegion("block"));
+			floor.setPosition(j * floorWidth, 0);
+			addActor(floor);
+		}
+		
+		
+		
+		//Creates Cloud
+		for(int k = 0; k < 7; k++)
+		{
+			Blob cloud = new Blob(atlas.findRegion("cloud1"), this, -50);
+			cloud.setPosition((float)Math.random() * this.getWidth() ,(float) Math.random() * this.getHeight() + (floorHeight*3) );
+			cloud.setRotation(0);
+			
+			addActor(cloud);
+		}
+		
+		//Creates  Car
+		car = new Car(atlas.findRegion("Car"), this, 300);
+		car.setPosition(0, floorHeight);
+		car.setRotation(0);
+		addActor(car);
+
+		//Creates Dingus
+		dingus = new JumpDingus(atlas.findRegion("playerSprite1"), this);
+		addActor(dingus);
+		dingus.setPosition(getWidth() / 2 - dingus.getWidth() / 2, floorHeight);
+		
+		
+		//Creates Text
+		Image text = new Image(this.getAtlas().findRegion("Quick"));
+		text.setPosition(this.getWidth()/2, this.getHeight()/2);
+		addActor(text);
 	}
 
 	public Car getCar()
@@ -103,6 +103,7 @@ public class JumpWorld extends AbstractWorld
 		{
 			System.out.println("LOOSSSSEEEE");
 			game.minigameLost();
+			return;
 		}
 		else if(clicked >= 1)
 		{
@@ -125,7 +126,7 @@ public class JumpWorld extends AbstractWorld
 		if(clicked < 1)
 		{
 			System.out.println("LOOSSSSEEEE");
-			game.minigameLost();
+			//game.minigameLost();
 			clicked = 0;
 		}
 		else

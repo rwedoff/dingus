@@ -66,7 +66,7 @@ public class MenuScreen extends AbstractScreen
 		{
 			public void clicked(InputEvent event, float x, float y) 
 			{
-				game.setScreen(new GameScreen(game, 1));
+				game.nextMinigame();
 		    }
 		});
 		table.add(startGameButton).size(300, 60).uniform().spaceBottom(10);

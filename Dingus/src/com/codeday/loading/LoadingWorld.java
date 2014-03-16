@@ -107,7 +107,8 @@ public class LoadingWorld extends AbstractWorld
 	@Override
 	protected void minigameOver() 
 	{
-		game.nextMinigame();
+		if (newLives > 0)
+			game.nextMinigame();
 	}
 	
 	private void gameOver()

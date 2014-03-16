@@ -94,7 +94,7 @@ public class Dingus extends Game
 		
 		float rand2 = (float) Math.random();
 		float offset = 0;
-		if (rand < 10 )
+		if (rand <= 10 )
 		{
 			if(games<=6)
 				offset = games*(rand2-.5f)*(1200);
@@ -103,7 +103,7 @@ public class Dingus extends Game
 			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), (long) (5000 + offset) ));
 			games++;
 		}
-		else if(rand > 10 && rand < 30   )
+		else if(rand < 30   )
 		{
 			if(games<=6)
 				offset = games*rand2*(800);
@@ -113,7 +113,7 @@ public class Dingus extends Game
 			games++;
 		}
 		
-		else if(rand > 30 && rand < 50)
+		else if(rand < 50)
 		{
 			if(games<=6)
 				offset = games*rand2*(-500);
@@ -122,7 +122,7 @@ public class Dingus extends Game
 			setScreen(new EscapeMinigame(this, new EscapeWorld(this), (long) (5000 + offset) ));
 			games++;
 		}
-		else if(rand > 50 && rand < 75)
+		else if( rand < 75)
 		{
 			if(games<=6)
 				offset = games*rand2*(-500);
@@ -130,7 +130,7 @@ public class Dingus extends Game
 				offset = rand2*(-3000);
 			setScreen(new FliesMinigame(this, new FliesWorld(this), (long) (5000 + offset) ));
 		}
-		else if(rand > 75)
+		else if(rand >= 75)
 		{
 			setScreen(new JumpMinigame(this, new JumpWorld(this), 5000));
 		}
@@ -138,8 +138,8 @@ public class Dingus extends Game
 
 	public void minigameLost() 
 	{
-		setLives(getLives() - 1);
 		setScreen(new LoadingScreen(this, new LoadingWorld(this, getLives(), getLives() - 1), 3000));
+		lives--;
 	}
 	public void minigameWon(int pointsWon)
 	{

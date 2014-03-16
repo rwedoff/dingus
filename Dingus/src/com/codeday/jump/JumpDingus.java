@@ -13,7 +13,7 @@ public class JumpDingus  extends Image
 	private ShapeRenderer renderer = new ShapeRenderer();
 	private float playerAngle;
 	private Vector2 velocity;
-	public static boolean collided = false;
+	public boolean collided = false;
 	
 	
 	public JumpDingus(TextureRegion texture, AbstractWorld world)
@@ -39,7 +39,7 @@ public class JumpDingus  extends Image
 
 		}
 	}
-	public static boolean collided()
+	public boolean collided()
 	{
 		return collided;
 	}
