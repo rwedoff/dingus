@@ -1,5 +1,12 @@
 package com.codeday.dingus;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -70,7 +77,36 @@ public class MainActivity extends AndroidApplication
 	
 	@Override
 	public void submitScoreGPGS(int score) {
-		gameHelper.getGamesClient().submitScore(getString(R.string.leaderboard_id), score);		
+		//gameHelper.getGamesClient().submitScore(getString(R.string.leaderboard_id), score);	
+		
+		SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
+		ArrayList<Integer> scores = new ArrayList<Integer>();
+		for (int i = 0; i < 10; i++)
+		{
+			scores.add(prefs.getInt(i + "", 0));
+		}
+		
+		scores.add(score);
+		
+		Collections.sort(scores);
+		
+		Editor editor = prefs.edit();
+		for (int i = 0; i < 10; i++)
+		{
+			editor.putInt(i + "", scores.get(i));
+		}
+		editor.commit();
+		
+	}
+	
+	public ArrayList<Integer> getScoreList() {
+		SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
+		ArrayList<Integer> scores = new ArrayList<Integer>();
+		for (int i = 0; i < 10; i++)
+		{
+			scores.add(prefs.getInt(i + "", 0));
+		}
+		return scores;
 	}
 
 	@Override
