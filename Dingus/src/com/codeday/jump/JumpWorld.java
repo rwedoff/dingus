@@ -61,7 +61,7 @@ public class JumpWorld extends AbstractWorld
 				}
 				
 				//Creates  Car
-				car = new Car(atlas.findRegion("Car"), this, 500);
+				car = new Car(atlas.findRegion("Car"), this, 300);
 				car.setPosition(0, floorHeight);
 				car.setRotation(0);
 				addActor(car);
