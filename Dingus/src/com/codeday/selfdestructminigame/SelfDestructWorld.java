@@ -18,6 +18,7 @@ public class SelfDestructWorld extends AbstractWorld
 	@Override
 	protected void setupLevel() 
 	{
+		//Background
 		int tileWidth = atlas.findRegion("circuitBoard2").getRegionWidth();
 		int tileHeight = atlas.findRegion("circuitBoard2").getRegionHeight();
 		Image background;
@@ -53,8 +54,6 @@ public class SelfDestructWorld extends AbstractWorld
 	public void act(float delta)
 	{
 		super.act(delta);
-		
-		
 	}
 
 	@Override

@@ -220,105 +220,49 @@ filter: Nearest,Nearest
 repeat: none
 3
   rotate: false
-  xy: 256, 254
+  xy: 256, 233
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 circle
   rotate: false
-  xy: 704, 406
+  xy: 704, 385
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 player
   rotate: false
-  xy: 0, 21
+  xy: 0, 0
   size: 99, 75
   orig: 99, 75
   offset: 0, 0
   index: -1
 playerDamaged
   rotate: false
-  xy: 256, 177
+  xy: 256, 156
   size: 99, 75
   orig: 99, 75
   offset: 0, 0
   index: -1
 playerDied
   rotate: false
-  xy: 402, 406
+  xy: 402, 385
   size: 300, 100
   orig: 300, 100
   offset: 0, 0
   index: -1
-playerSprite1
-  rotate: false
-  xy: 806, 410
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite2
-  rotate: false
-  xy: 882, 410
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite8
-  rotate: false
-  xy: 882, 410
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite3
-  rotate: false
-  xy: 256, 79
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite7
-  rotate: false
-  xy: 256, 79
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite4
-  rotate: false
-  xy: 101, 0
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite6
-  rotate: false
-  xy: 101, 0
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite5
-  rotate: false
-  xy: 177, 0
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
 starBackground
   rotate: false
-  xy: 0, 98
+  xy: 0, 77
   size: 254, 256
   orig: 254, 256
   offset: 0, 0
   index: -1
 youWin
   rotate: false
-  xy: 0, 356
+  xy: 0, 335
   size: 400, 150
   orig: 400, 150
   offset: 0, 0
