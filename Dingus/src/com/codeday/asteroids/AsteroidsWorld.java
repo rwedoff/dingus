@@ -7,16 +7,13 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Input.Peripheral;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codeday.dingus.AbstractWorld;
-import com.codeday.dingus.Asteroid;
 import com.codeday.dingus.Dingus;
-import com.codeday.dingus.World;
-import com.codeday.selfdestructminigame.Button;
+
 
 public class AsteroidsWorld extends AbstractWorld
 {
 
-	private ArrayList<asteroids> asteroidList = new ArrayList<asteroids>();
-	private SpaceShip ship;
+	private ArrayList<Asteroid> asteroidList;
 	private SpaceShip s;
 	
 	
@@ -46,26 +43,29 @@ public class AsteroidsWorld extends AbstractWorld
 		}
 		
 		//Makes Asteroids
-		asteroidList = new ArrayList<asteroids>();
+		asteroidList = new ArrayList<Asteroid>();
 			
 		for(int i = 0; i < 10; i++)
 		{
-		asteroids a = new asteroids(atlas.findRegion("meteorBig"), this);
-		addActor(a);
-		a.setPosition((float)Math.random()*this.getWidth() , (float)Math.random()*this.getHeight() + getHeight() - a.getWidth()/2);
-		asteroidList.add(a);
-		a.setRotation((float)Math.random()*360);
+			Asteroid a = new Asteroid(atlas.findRegion("meteorBig"), this);
+			a.setPosition((float)Math.random()*this.getWidth() , (float)Math.random()*this.getHeight() + this.getHeight()  - a.getWidth()/2);
+			a.setRotation((float)Math.random()*360);
+			asteroidList.add(a);
+			addActor(a);
 		}
-		
+			
 		
 		
 		//Makes Spaceship
-		s = new SpaceShip(atlas.findRegion("enemyUFO"), this);
+		s = new SpaceShip(atlas.findRegion("DingusShip"), this);
 		addActor(s);
 		s.setPosition(getWidth() / 2 - s.getWidth() / 2, s.getWidth()/2);
 	}
 
-	
+	public ArrayList<Asteroid> getAsteroids()
+	{
+		return asteroidList;
+	}
 	
 	
 	
@@ -75,33 +75,40 @@ public class AsteroidsWorld extends AbstractWorld
 		
 		float thrust = 0;
 		
-		thrust += 100 * Gdx.input.getAccelerometerY();
+		thrust += 200 * Gdx.input.getAccelerometerY();
 		
 		
 		if (controller.isKeyDown(Keys.RIGHT) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
 		{
 			
-			thrust = 500;
+			thrust = 300;
 		}
 		if (controller.isKeyDown(Keys.LEFT) && (!Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen) || Gdx.input.isTouched()))
 		{
 			
-			thrust = -500;
+			thrust = -300;
 		}
-		s.update( delta, this,   thrust, asteroidList);
-
-		
-
-		
-		
+		s.update( delta, this,   thrust);
+	
 		
 	}
 
+	
 	
 	public void act(float delta)
 	{
 		super.act(delta);
 		spaceControls(delta);
+		
+		
+		//Checks to see if lost, then goes to load screen
+		if(SpaceShip.collided())
+		{
+			System.out.println("LOOSSSSEEEE");
+			game.minigameLost();
+		}
+		SpaceShip.collided = false;
+		
 	}
 	@Override
 	public boolean keyDown(int keycode)
