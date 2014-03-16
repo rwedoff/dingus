@@ -7,8 +7,7 @@ import com.codeday.dingus.Dingus;
 public class SelfDestructMinigame extends AbstractMinigame
 {
 
-	public SelfDestructMinigame(Dingus game, AbstractWorld world,
-			long millisecondLength) 
+	public SelfDestructMinigame(Dingus game, AbstractWorld world,long millisecondLength) 
 	{
 		super(game, world, millisecondLength);
 	}
