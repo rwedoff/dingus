@@ -5,12 +5,17 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.FPSLogger;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.codeday.asteroids.AsteroidsWorld;
 import com.codeday.asteroids.asteroidsMinigame;
 import com.codeday.escape.EscapeMinigame;
 import com.codeday.escape.EscapeWorld;
+import com.codeday.flies.FliesMinigame;
+import com.codeday.flies.FliesWorld;
 
+import com.codeday.jump.JumpMinigame;
+import com.codeday.jump.JumpWorld;
 import com.codeday.loading.LoadingScreen;
 import com.codeday.loading.LoadingWorld;
 import com.codeday.selfdestructminigame.SelfDestructMinigame;
@@ -55,6 +60,8 @@ public class Dingus extends Game
 
 	// Game-related methods
 
+	
+
 	@Override
 	public void create()
 	{
@@ -95,7 +102,7 @@ public class Dingus extends Game
 			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), (long) (5000 + offset) ));
 			games++;
 		}
-		else if(rand == 33)
+		else if(rand == 5)
 		{
 			if(games<=6)
 				offset = games*rand2*(800);
@@ -105,7 +112,7 @@ public class Dingus extends Game
 			games++;
 		}
 		
-		else
+		else if(rand == 25)
 		{
 			if(games<=6)
 				offset = games*rand2*(-500);
@@ -113,6 +120,14 @@ public class Dingus extends Game
 				offset = rand2*(-3000);
 			setScreen(new EscapeMinigame(this, new EscapeWorld(this), (long) (5000 + offset) ));
 			games++;
+		}
+		else if(rand == 12)
+		{
+			setScreen(new FliesMinigame(this, new FliesWorld(this), 5000));
+		}
+		else if(rand ==33)
+		{
+			setScreen(new JumpMinigame(this, new JumpWorld(this), 5000));
 		}
 	}
 

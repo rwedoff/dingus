@@ -3,11 +3,11 @@ pages-info.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-1
+Car
   rotate: false
-  xy: 910, 39
-  size: 100, 100
-  orig: 100, 100
+  xy: 265, 87
+  size: 200, 104
+  orig: 200, 104
   offset: 0, 0
   index: -1
 Explosion1
@@ -54,7 +54,7 @@ gameOver
   index: -1
 laserGreen
   rotate: false
-  xy: 979, 199
+  xy: 1004, 41
   size: 9, 33
   orig: 9, 33
   offset: 0, 0
@@ -68,7 +68,7 @@ laserGreenShot
   index: -1
 laserRed
   rotate: false
-  xy: 990, 266
+  xy: 1004, 6
   size: 9, 33
   orig: 9, 33
   offset: 0, 0
@@ -82,7 +82,7 @@ laserRedShot
   index: -1
 life
   rotate: false
-  xy: 954, 301
+  xy: 954, 259
   size: 35, 27
   orig: 35, 27
   offset: 0, 0
@@ -96,21 +96,63 @@ meteorSmall
   index: -1
 nebula
   rotate: false
-  xy: 265, 21
+  xy: 467, 21
   size: 241, 168
   orig: 241, 168
   offset: 0, 0
   index: -1
+nextLevel
+  rotate: false
+  xy: 710, 89
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
 pauseButton
   rotate: false
-  xy: 910, 141
+  xy: 357, 37
   size: 108, 48
   orig: 108, 48
   offset: 0, 0
   index: -1
+plant
+  rotate: false
+  xy: 954, 288
+  size: 35, 40
+  orig: 35, 40
+  offset: 0, 0
+  index: -1
+player
+  rotate: false
+  xy: 802, 12
+  size: 99, 75
+  orig: 99, 75
+  offset: 0, 0
+  index: -1
+playerDamaged
+  rotate: false
+  xy: 903, 12
+  size: 99, 75
+  orig: 99, 75
+  offset: 0, 0
+  index: -1
+playerLeft
+  rotate: false
+  xy: 265, 8
+  size: 90, 77
+  orig: 90, 77
+  offset: 0, 0
+  index: -1
+playerRight
+  rotate: false
+  xy: 710, 10
+  size: 90, 77
+  orig: 90, 77
+  offset: 0, 0
+  index: -1
 powerupRedWeapon
   rotate: false
-  xy: 954, 266
+  xy: 398, 2
   size: 34, 33
   orig: 34, 33
   offset: 0, 0
@@ -124,9 +166,16 @@ selfDestruct
   index: -1
 shieldGold
   rotate: false
-  xy: 954, 234
+  xy: 434, 5
   size: 30, 30
   orig: 30, 30
+  offset: 0, 0
+  index: -1
+shroom
+  rotate: false
+  xy: 357, 1
+  size: 39, 34
+  orig: 39, 34
   offset: 0, 0
   index: -1
 speedLine
@@ -138,14 +187,14 @@ speedLine
   index: -1
 starBig
   rotate: false
-  xy: 954, 211
+  xy: 954, 236
   size: 23, 21
   orig: 23, 21
   offset: 0, 0
   index: -1
 starSmall
   rotate: false
-  xy: 954, 198
+  xy: 1004, 76
   size: 11, 11
   orig: 11, 11
   offset: 0, 0
@@ -157,142 +206,114 @@ title
   orig: 700, 400
   offset: 0, 0
   index: -1
-youWin
-  rotate: false
-  xy: 508, 39
-  size: 400, 150
-  orig: 400, 150
-  offset: 0, 0
-  index: -1
 
 pages-info2.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+1
+  rotate: false
+  xy: 895, 912
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
 2
   rotate: false
-  xy: 902, 72
+  xy: 895, 810
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 3
   rotate: false
-  xy: 895, 920
+  xy: 895, 708
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 Blob
   rotate: false
-  xy: 767, 11
+  xy: 879, 0
   size: 100, 51
   orig: 100, 51
   offset: 0, 0
   index: -1
-DingusShip
-  rotate: false
-  xy: 302, 2
-  size: 91, 92
-  orig: 91, 92
-  offset: 0, 0
-  index: -1
-Dodge
-  rotate: false
-  xy: 302, 96
-  size: 150, 70
-  orig: 150, 70
-  offset: 0, 0
-  index: -1
 Explosion11
   rotate: false
-  xy: 0, 595
+  xy: 0, 587
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion12
   rotate: false
-  xy: 477, 174
+  xy: 477, 166
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion13
   rotate: false
-  xy: 0, 168
+  xy: 0, 160
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
+Fly
+  rotate: false
+  xy: 252, 20
+  size: 72, 36
+  orig: 72, 36
+  offset: 0, 0
+  index: -1
 RedButton-Active
   rotate: false
-  xy: 477, 601
+  xy: 477, 593
   size: 416, 419
   orig: 416, 419
   offset: 0, 0
   index: -1
 backgroundColor
   rotate: false
-  xy: 477, 22
+  xy: 0, 8
   size: 150, 150
   orig: 150, 150
   offset: 0, 0
   index: -1
 circle
   rotate: false
-  xy: 895, 818
+  xy: 895, 606
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 enemyShip
   rotate: false
-  xy: 629, 9
+  xy: 152, 6
   size: 98, 50
   orig: 98, 50
   offset: 0, 0
   index: -1
-ground_cave
-  rotate: false
-  xy: 902, 0
-  size: 70, 70
-  orig: 70, 70
-  offset: 0, 0
-  index: -1
 meteorBig
   rotate: false
-  xy: 629, 61
+  xy: 879, 53
   size: 136, 111
   orig: 136, 111
   offset: 0, 0
   index: -1
-nextLevel
+playerDied
   rotate: false
-  xy: 0, 66
+  xy: 152, 58
   size: 300, 100
   orig: 300, 100
   offset: 0, 0
   index: -1
-player
+youWin
   rotate: false
-  xy: 895, 741
-  size: 99, 75
-  orig: 99, 75
-  offset: 0, 0
-  index: -1
-playerDamaged
-  rotate: false
-  xy: 895, 664
-  size: 99, 75
-  orig: 99, 75
-  offset: 0, 0
-  index: -1
-shield
-  rotate: false
-  xy: 767, 64
-  size: 133, 108
-  orig: 133, 108
+  xy: 477, 14
+  size: 400, 150
+  orig: 400, 150
   offset: 0, 0
   index: -1
 
@@ -300,130 +321,109 @@ pages-info3.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+DingusShip
+  rotate: false
+  xy: 617, 0
+  size: 91, 92
+  orig: 91, 92
+  offset: 0, 0
+  index: -1
+Dodge
+  rotate: false
+  xy: 487, 94
+  size: 150, 70
+  orig: 150, 70
+  offset: 0, 0
+  index: -1
 Explosion14
   rotate: false
-  xy: 0, 592
+  xy: 0, 593
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion15
   rotate: false
-  xy: 477, 592
+  xy: 0, 166
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion16
   rotate: false
-  xy: 0, 165
+  xy: 477, 593
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion17
   rotate: false
-  xy: 477, 165
+  xy: 477, 166
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
-Tap
+Kill
   rotate: false
-  xy: 302, 93
+  xy: 639, 94
   size: 150, 70
   orig: 150, 70
   offset: 0, 0
   index: -1
+Quick
+  rotate: false
+  xy: 0, 55
+  size: 350, 109
+  orig: 350, 109
+  offset: 0, 0
+  index: -1
+Tap
+  rotate: false
+  xy: 791, 94
+  size: 150, 70
+  orig: 150, 70
+  offset: 0, 0
+  index: -1
+block
+  rotate: false
+  xy: 874, 22
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
 cloud1
   rotate: false
-  xy: 302, 20
+  xy: 487, 21
   size: 128, 71
   orig: 128, 71
   offset: 0, 0
   index: -1
 enemyUFO
   rotate: false
-  xy: 432, 0
+  xy: 710, 1
   size: 91, 91
   orig: 91, 91
   offset: 0, 0
   index: -1
-playerDied
+p1_hurt
   rotate: false
-  xy: 0, 63
-  size: 300, 100
-  orig: 300, 100
-  offset: 0, 0
-  index: -1
-playerLeft
-  rotate: false
-  xy: 905, 86
-  size: 90, 77
-  orig: 90, 77
-  offset: 0, 0
-  index: -1
-playerRight
-  rotate: false
-  xy: 905, 7
-  size: 90, 77
-  orig: 90, 77
+  xy: 803, 0
+  size: 69, 92
+  orig: 69, 92
   offset: 0, 0
   index: -1
 playerSprite1
   rotate: false
-  xy: 525, 67
+  xy: 946, 68
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
-playerSprite2
+shield
   rotate: false
-  xy: 601, 67
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite8
-  rotate: false
-  xy: 601, 67
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite3
-  rotate: false
-  xy: 677, 67
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite7
-  rotate: false
-  xy: 677, 67
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite4
-  rotate: false
-  xy: 753, 67
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite6
-  rotate: false
-  xy: 753, 67
-  size: 74, 96
-  orig: 74, 96
-  offset: 0, 0
-  index: -1
-playerSprite5
-  rotate: false
-  xy: 829, 67
-  size: 74, 96
-  orig: 74, 96
+  xy: 352, 56
+  size: 133, 108
+  orig: 133, 108
   offset: 0, 0
   index: -1
 
@@ -433,30 +433,93 @@ filter: Nearest,Nearest
 repeat: none
 Explosion18
   rotate: false
-  xy: 0, 427
+  xy: 0, 525
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion19
   rotate: false
-  xy: 0, 0
+  xy: 0, 98
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion2
   rotate: false
-  xy: 477, 427
+  xy: 477, 525
   size: 475, 425
   orig: 475, 425
   offset: 0, 0
   index: -1
 Explosion20
   rotate: false
-  xy: 477, 0
+  xy: 477, 98
   size: 475, 425
   orig: 475, 425
+  offset: 0, 0
+  index: -1
+grass
+  rotate: false
+  xy: 304, 26
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+ground_cave
+  rotate: false
+  xy: 376, 26
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+playerSprite2
+  rotate: false
+  xy: 0, 0
+  size: 74, 96
+  orig: 74, 96
+  offset: 0, 0
+  index: -1
+playerSprite8
+  rotate: false
+  xy: 0, 0
+  size: 74, 96
+  orig: 74, 96
+  offset: 0, 0
+  index: -1
+playerSprite3
+  rotate: false
+  xy: 76, 0
+  size: 74, 96
+  orig: 74, 96
+  offset: 0, 0
+  index: -1
+playerSprite7
+  rotate: false
+  xy: 76, 0
+  size: 74, 96
+  orig: 74, 96
+  offset: 0, 0
+  index: -1
+playerSprite4
+  rotate: false
+  xy: 152, 0
+  size: 74, 96
+  orig: 74, 96
+  offset: 0, 0
+  index: -1
+playerSprite6
+  rotate: false
+  xy: 152, 0
+  size: 74, 96
+  orig: 74, 96
+  offset: 0, 0
+  index: -1
+playerSprite5
+  rotate: false
+  xy: 228, 0
+  size: 74, 96
+  orig: 74, 96
   offset: 0, 0
   index: -1
 

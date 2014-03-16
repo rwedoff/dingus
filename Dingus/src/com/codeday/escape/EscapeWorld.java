@@ -101,6 +101,10 @@ public class EscapeWorld extends AbstractWorld
 					
 					addActor(cloud);
 				}
+				
+				
+				
+				
 	}
 
 	
