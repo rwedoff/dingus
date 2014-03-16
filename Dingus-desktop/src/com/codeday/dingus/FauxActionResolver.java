@@ -1,5 +1,7 @@
 package com.codeday.dingus;
 
+import java.util.ArrayList;
+
 import dingusInterfaces.ActionResolver;
 
 public class FauxActionResolver implements ActionResolver {
@@ -47,6 +49,12 @@ public class FauxActionResolver implements ActionResolver {
 	public boolean isLoggingIn() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public ArrayList<Integer> getScoreList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
