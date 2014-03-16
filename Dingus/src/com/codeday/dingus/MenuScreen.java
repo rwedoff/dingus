@@ -20,6 +20,8 @@ public class MenuScreen extends AbstractScreen
 	public MenuScreen(Dingus game)
 	{
 		super(game);
+		
+		game.setLives(3);
 	}
 
 	@Override

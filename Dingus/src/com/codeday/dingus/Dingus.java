@@ -44,6 +44,8 @@ public class Dingus extends Game
 	
 	private int lives = 3;
 	
+	private int games = 0;
+	
 	ActionResolver actionResolver;
 
 	public Dingus(ActionResolver actionResolver)
@@ -81,35 +83,48 @@ public class Dingus extends Game
 	public void nextMinigame() 
 	{
 		//int rand = (int) (Math.random() * 100);
-		int rand = 33;
+		int rand = 100;
+		float rand2 = (float) Math.random();
+		float offset = 0;
 		if (rand == 100)
 		{
-			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), 5000));
+			if(games<=6)
+				offset = games*(rand2-.5f)*(1200);
+			else 
+				offset = (rand2-.5f)*(3000);
+			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), (long) (5000 + offset) ));
+			games++;
 		}
 		else if(rand == 33)
 		{
-			setScreen(new asteroidsMinigame(this, new AsteroidsWorld(this), 5000));
+			if(games<=6)
+				offset = games*rand2*(800);
+			else 
+				offset = rand2*(3000);
+			setScreen(new asteroidsMinigame(this, new AsteroidsWorld(this), (long) (5000 + offset) ));
+			games++;
 		}
 		
 		else
 		{
-			setScreen(new EscapeMinigame(this, new EscapeWorld(this), 5000));
+			if(games<=6)
+				offset = games*rand2*(-500);
+			else 
+				offset = rand2*(-3000);
+			setScreen(new EscapeMinigame(this, new EscapeWorld(this), (long) (5000 + offset) ));
+			games++;
 		}
 	}
 
 	public void minigameLost() 
 	{
-		setScreen(new LoadingScreen(this, new LoadingWorld(this, lives, lives - 1), 3000));
-		lives--;
-		if (lives==0)
-		{
-			setScreen(new MenuScreen(this));
-		}
+		setScreen(new LoadingScreen(this, new LoadingWorld(this, getLives(), getLives() - 1), 3000));
+		setLives(getLives() - 1);
 	}
 	public void minigameWon()
 	{
-		System.out.println(lives);
-		setScreen(new LoadingScreen(this, new LoadingWorld(this, lives, lives), 3000));
+		System.out.println(getLives());
+		setScreen(new LoadingScreen(this, new LoadingWorld(this, getLives(), getLives()), 3000));
 	}
 	
 
@@ -209,5 +224,13 @@ public class Dingus extends Game
 	public SoundManager getSoundManager()
 	{
 		return soundManager;
+	}
+
+	public int getLives() {
+		return lives;
+	}
+
+	public void setLives(int lives) {
+		this.lives = lives;
 	}
 }

@@ -11,9 +11,8 @@ public abstract class AbstractWorld extends Stage implements InputProcessor
 	protected WorldController controller;
 	protected Dingus game;
 	private long startTime;
-	private long minigameLength;
+	protected long minigameLength;
 	protected TextureAtlas atlas;
-	private Image timerBar;
 	private float initialWidth;
 	private Image foregroundTimer;
 

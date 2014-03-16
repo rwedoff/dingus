@@ -121,7 +121,19 @@ public class LoadingWorld extends AbstractWorld
 		game.getSoundManager().play(SoundEffect.GAME_OVER);
 
 		gameOver.addAction(Actions.sequence(Actions.fadeIn(.25f),
-		Actions.delay(3f), Actions.fadeOut(.25f)));
+		Actions.delay(3f), Actions.fadeOut(.25f), new Action()
+		{
+
+			@Override
+			public boolean act(float delta)
+			{
+				game.setScreen(new MenuScreen(game));
+				return true;
+			}
+			
+		}));
+		
+		oldLives = 0;
 	}
 	
 	public void act(float delta)

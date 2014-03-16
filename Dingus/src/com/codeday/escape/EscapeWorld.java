@@ -17,6 +17,7 @@ public class EscapeWorld extends AbstractWorld
 
 	private int clicked = 0;
 	private SpriteWalker player;
+	private long lastClick;
 	
 	
 	public EscapeWorld(Dingus game) {
@@ -113,8 +114,11 @@ public class EscapeWorld extends AbstractWorld
 			clicked++;
 			System.out.println("Clicked: "+ clicked);			
 			//Checks to see if lost, then goes to load screen
-			float xPotential = player.getX() + 50;
-			player.setX(xPotential);
+			
+			player.setVelocity(450,0);
+			lastClick = System.currentTimeMillis();
+			//float xPotential = player.getX() + 50;
+			//player.setX(xPotential);
 		return true;
 	
 	}
@@ -123,6 +127,10 @@ public class EscapeWorld extends AbstractWorld
 		super.act(delta);
 				
 		player.update(delta);
+		if(System.currentTimeMillis() - lastClick > 200)
+		{
+			player.setVelocity(0, 0);
+		}
 		/*float xPotential = player.getX() + 230 * delta;
 		player.setX(xPotential);*/
 			
