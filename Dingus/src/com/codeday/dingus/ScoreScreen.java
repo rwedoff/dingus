@@ -50,14 +50,14 @@ public class ScoreScreen extends AbstractScreen
 		}
 		
 		// register the button "start game"
-		TextField highscoresText = new TextField("High Scores:", getSkin());
+		Label highscoresText = new Label("High Scores:", getSkin());
 		
 		table.add(highscoresText).size(300, 60).uniform().spaceBottom(10);
 		table.row();
 		ArrayList<Integer> scores = game.getActionResolver().getScoreList();
 		
 		for(int i = 0; i < scores.size(); i++) {
-			table.add(new Label(i + ". - " + scores.get(i), getSkin()))
+			table.add(new Label((i + 1) + ". - " + scores.get(i), getSkin()))
 				.size(300, 60).uniform().spaceBottom(10);
 			table.row();
 		}
