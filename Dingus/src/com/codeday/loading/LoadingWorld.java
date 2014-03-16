@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -12,6 +13,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.codeday.dingus.AbstractScreen;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 
@@ -92,6 +96,15 @@ public class LoadingWorld extends AbstractWorld
 			addActor(stopped);
 		}
 
+			FileHandle skinFile = Gdx.files.internal("skin/uiskin.json");
+			Skin skin = new Skin(skinFile);
+
+		
+		Label scoreLabel = new Label(game.getScore() + "", skin);
+		scoreLabel.size(300, 60);
+		scoreLabel.setPosition(10, 10);
+		addActor(scoreLabel);
+		
 		if(newLives == 0)
 		{
 			gameOver();
