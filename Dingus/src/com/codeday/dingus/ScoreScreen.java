@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
@@ -56,7 +57,7 @@ public class ScoreScreen extends AbstractScreen
 		ArrayList<Integer> scores = game.getActionResolver().getScoreList();
 		
 		for(int i = 0; i < scores.size(); i++) {
-			table.add(new TextField(i + ". - " + scores.get(i), getSkin()))
+			table.add(new Label(i + ". - " + scores.get(i), getSkin()))
 				.size(300, 60).uniform().spaceBottom(10);
 			table.row();
 		}
