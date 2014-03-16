@@ -102,7 +102,7 @@ public class MainActivity extends AndroidApplication
 	public ArrayList<Integer> getScoreList() {
 		SharedPreferences prefs = this.getSharedPreferences("scores", Context.MODE_PRIVATE);
 		ArrayList<Integer> scores = new ArrayList<Integer>();
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 5; i++)
 		{
 			scores.add(prefs.getInt(i + "", 0));
 		}
