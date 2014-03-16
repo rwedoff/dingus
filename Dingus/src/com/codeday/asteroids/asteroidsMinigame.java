@@ -4,9 +4,11 @@ import com.codeday.dingus.AbstractMinigame;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 
+import dingusInterfaces.DingusConsts;
+
 public class asteroidsMinigame extends AbstractMinigame
 {
-
+	
 	public asteroidsMinigame(Dingus game, AbstractWorld world,
 			long millisecondLength) 
 	{

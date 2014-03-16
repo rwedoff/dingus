@@ -120,6 +120,10 @@ public class LoadingWorld extends AbstractWorld
 		addActor(gameOver);
 		game.getSoundManager().play(SoundEffect.GAME_OVER);
 
+		oldLives = 0;
+		
+		game.submitScore();
+		
 		gameOver.addAction(Actions.sequence(Actions.fadeIn(.25f),
 		Actions.delay(3f), Actions.fadeOut(.25f), new Action()
 		{
@@ -133,7 +137,6 @@ public class LoadingWorld extends AbstractWorld
 			
 		}));
 		
-		oldLives = 0;
 	}
 	
 	public void act(float delta)

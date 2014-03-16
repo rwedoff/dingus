@@ -9,6 +9,8 @@ import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 import com.codeday.loading.SpriteWalker;
 
+import dingusInterfaces.DingusConsts;
+
 public class SelfDestructWorld extends AbstractWorld
 {
 
@@ -113,7 +115,7 @@ public class SelfDestructWorld extends AbstractWorld
 	@Override
 	protected void minigameOver() 
 	{
-		game.minigameWon();
+		game.minigameWon(DingusConsts.SELFDESTRUCT_SCORE);
 	}
 	
 

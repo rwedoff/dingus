@@ -9,6 +9,8 @@ import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 import com.codeday.escape.Blob;
 
+import dingusInterfaces.DingusConsts;
+
 public class FliesWorld extends AbstractWorld
 {
 
@@ -156,7 +158,7 @@ public class FliesWorld extends AbstractWorld
 	{
 		if(flies.isEmpty())
 		{
-			game.minigameWon();
+			game.minigameWon(DingusConsts.FLIES_SCORE);
 			
 		}
 		else
