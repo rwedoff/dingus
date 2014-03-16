@@ -14,7 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
-import com.codeday.dingus.Laser;
+
 import com.codeday.dingus.MenuScreen;
 import com.codeday.dingus.SoundManager.SoundEffect;
 

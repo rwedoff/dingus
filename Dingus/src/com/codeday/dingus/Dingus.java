@@ -32,14 +32,14 @@ public class Dingus extends Game
 	public static final String LOG = Dingus.class.getSimpleName();
 
 	// whether we are in development mode
-	public static final boolean DEV_MODE = true;
+	public static final boolean DEV_MODE = false;
 
 	// a libgdx helper class that logs the current FPS each second
 	private FPSLogger fpsLogger;
 
 	// services
 	private PreferencesManager preferencesManager;
-	private LevelManager levelManager;
+	
 	private MusicManager musicManager;
 	private SoundManager soundManager;
 
@@ -75,8 +75,7 @@ public class Dingus extends Game
 		musicManager.setVolume(preferencesManager.getVolume());
 		musicManager.setEnabled(preferencesManager.isMusicEnabled());
 
-		// create the level manager
-		levelManager = new LevelManager();
+	
 		
 		soundManager = new SoundManager();
 		soundManager.setEnabled(true);
@@ -230,10 +229,6 @@ public class Dingus extends Game
 		return preferencesManager;
 	}
 
-	public LevelManager getLevelManager()
-	{
-		return levelManager;
-	}
 
 	public MusicManager getMusicManager()
 	{
