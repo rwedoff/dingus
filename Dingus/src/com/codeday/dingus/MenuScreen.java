@@ -61,8 +61,31 @@ public class MenuScreen extends AbstractScreen
 				game.setScreen(new GameScreen(game, 1));
 		    }
 		});
-		
 		table.add(startGameButton).size(300, 60).uniform().spaceBottom(10);
+		table.row();
+
+		TextButton achievementButton = new TextButton("Start game", getSkin());
+		achievementButton.addListener(new ClickListener()
+		{
+			public void clicked(InputEvent event, float x, float y) 
+			{
+				if (game.actionResolver.getSignedInGPGS()) game.actionResolver.getAchievementsGPGS();
+				else game.actionResolver.loginGPGS();
+		    }
+		});
+		table.add(achievementButton).size(300, 60).uniform().spaceBottom(10);
+		table.row();
+		
+		TextButton leaderboardButton = new TextButton("Start game", getSkin());
+		leaderboardButton.addListener(new ClickListener()
+		{
+			public void clicked(InputEvent event, float x, float y) 
+			{
+				if (game.actionResolver.getSignedInGPGS()) game.actionResolver.getLeaderboardGPGS();
+				else game.actionResolver.loginGPGS();
+		    }
+		});
+		table.add(leaderboardButton).size(300, 60).uniform().spaceBottom(10);
 		table.row();
 	}
 	
