@@ -27,7 +27,7 @@ public class SplashScreen extends AbstractScreen
 	public SplashScreen(Dingus game)
 	{
 		super(game);
-		music = new BackgroundMusic("music/OutThere_0.ogg", "Menu Music");
+		music = new BackgroundMusic("music/DingusMusic.ogg", "Menu Music");
 	}
 
 	@Override
