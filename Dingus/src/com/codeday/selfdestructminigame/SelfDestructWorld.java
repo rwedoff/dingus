@@ -1,6 +1,6 @@
 package com.codeday.selfdestructminigame;
 
-import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
+
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;

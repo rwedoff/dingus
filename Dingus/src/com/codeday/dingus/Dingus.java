@@ -7,6 +7,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.codeday.asteroids.AsteroidsWorld;
 import com.codeday.asteroids.asteroidsMinigame;
+import com.codeday.escape.EscapeMinigame;
+import com.codeday.escape.EscapeWorld;
 
 import com.codeday.loading.LoadingScreen;
 import com.codeday.loading.LoadingWorld;
@@ -72,15 +74,19 @@ public class Dingus extends Game
 	//SELECTS MINI GAME
 	public void nextMinigame() 
 	{
-		int rand = (int) (Math.random() * 100);
-		
-		if (rand == 100)
+		//int rand = (int) (Math.random() * 100);
+		int rand = 1;
+		if (rand > 50)
 		{
 			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), 5000));
 		}
-		else
+		else if(rand < 33)
 		{
 			setScreen(new asteroidsMinigame(this, new AsteroidsWorld(this), 5000));
+		}
+		else
+		{
+			setScreen(new EscapeMinigame(this, new EscapeWorld(this), 5000));
 		}
 	}
 
