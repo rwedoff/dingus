@@ -6,6 +6,8 @@ import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 import com.codeday.escape.Blob;
 
+import dingusInterfaces.DingusConsts;
+
 public class JumpWorld extends AbstractWorld
 {
 	private int clicked = 0;
@@ -104,7 +106,7 @@ public class JumpWorld extends AbstractWorld
 		}
 		else if(clicked >= 1)
 		{
-			game.minigameWon();
+			game.minigameWon(DingusConsts.JUMP_SCORE);
 			clicked =0;
 		}
 		
@@ -128,7 +130,7 @@ public class JumpWorld extends AbstractWorld
 		}
 		else
 		{
-			game.minigameWon();
+			game.minigameWon(DingusConsts.JUMP_SCORE);
 			clicked =0;
 		}
 		

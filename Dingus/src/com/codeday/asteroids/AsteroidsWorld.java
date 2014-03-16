@@ -9,6 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 
+import dingusInterfaces.DingusConsts;
+
 
 public class AsteroidsWorld extends AbstractWorld
 {
@@ -159,8 +161,7 @@ public class AsteroidsWorld extends AbstractWorld
 
 	@Override
 	protected void minigameOver() {
-		game.minigameWon();
-		
+		game.minigameWon(DingusConsts.ASTEROIDS_SCORE);
 	}
 
 }

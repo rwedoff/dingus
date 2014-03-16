@@ -51,7 +51,9 @@ public class Dingus extends Game
 	
 	private int games = 0;
 	
-	ActionResolver actionResolver;
+	private int score = 0;
+	
+	private ActionResolver actionResolver;
 
 	public Dingus(ActionResolver actionResolver)
 	{
@@ -136,12 +138,13 @@ public class Dingus extends Game
 
 	public void minigameLost() 
 	{
-		setScreen(new LoadingScreen(this, new LoadingWorld(this, getLives(), getLives() - 1), 3000));
 		setLives(getLives() - 1);
+		setScreen(new LoadingScreen(this, new LoadingWorld(this, getLives(), getLives() - 1), 3000));
 	}
-	public void minigameWon()
+	public void minigameWon(int pointsWon)
 	{
 		System.out.println(getLives());
+		score += pointsWon;
 		setScreen(new LoadingScreen(this, new LoadingWorld(this, getLives(), getLives()), 3000));
 	}
 	
@@ -246,5 +249,18 @@ public class Dingus extends Game
 
 	public void setLives(int lives) {
 		this.lives = lives;
+	}
+	
+	public int getScore() {
+		return score;
+	}
+	
+	public ActionResolver getActionResolver(){
+		return actionResolver;
+	}
+	
+	public void submitScore() {
+		actionResolver.submitScoreGPGS(score);
+		score = 0; // Should this be here or done in a "reset game" or "new game"?
 	}
 }

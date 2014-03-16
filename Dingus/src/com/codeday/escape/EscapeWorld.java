@@ -10,6 +10,8 @@ import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 import com.codeday.loading.SpriteWalker;
 
+import dingusInterfaces.DingusConsts;
+
 
 public class EscapeWorld extends AbstractWorld
 {
@@ -159,7 +161,7 @@ public class EscapeWorld extends AbstractWorld
 		}
 		else
 		{
-			game.minigameWon();
+			game.minigameWon(DingusConsts.ESCAPE_SCORE);
 			clicked =0;
 		}
 		
