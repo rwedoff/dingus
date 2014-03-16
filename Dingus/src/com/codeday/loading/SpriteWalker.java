@@ -12,20 +12,21 @@ public class SpriteWalker extends Image {
 
 	
 	public final Animation walkAnimation;
-	private TextureRegion[] regions;
+	public TextureRegion[] regions;
 	private Texture sheet;
 	private float stateTime;
-	public SpriteWalker(TextureRegion[] regions)
+	public SpriteWalker(TextureRegion[] regions, float frametime)
 	{	
 		super(regions[0]);
-	    
-	    walkAnimation = new Animation(.125f,regions);
+
+        stateTime = (float) Math.random();
+	    walkAnimation = new Animation(frametime,regions);
 	}
 	
 	public void update(float delta, LoadingWorld world)
 	{
         TextureRegion frame;
-
+        
         // find the appropriate frame of the tilt animation to be drawn
         frame = walkAnimation.getKeyFrame( (stateTime += delta)%1, false );
 		
