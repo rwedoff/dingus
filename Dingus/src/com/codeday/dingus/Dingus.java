@@ -5,6 +5,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.FPSLogger;
+import com.badlogic.gdx.scenes.scene2d.Action;
 import com.codeday.asteroids.AsteroidsWorld;
 import com.codeday.asteroids.asteroidsMinigame;
 import com.codeday.escape.EscapeMinigame;
@@ -99,6 +100,10 @@ public class Dingus extends Game
 	{
 		setScreen(new LoadingScreen(this, new LoadingWorld(this, lives, lives - 1), 3000));
 		lives--;
+		if (lives==0)
+		{
+			setScreen(new MenuScreen(this));
+		}
 	}
 	public void minigameWon()
 	{

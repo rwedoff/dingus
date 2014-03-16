@@ -3,23 +3,26 @@ package com.codeday.loading;
 
 import java.util.ArrayList;
 
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.codeday.dingus.AbstractWorld;
 import com.codeday.dingus.Dingus;
 import com.codeday.dingus.Laser;
+import com.codeday.dingus.MenuScreen;
+import com.codeday.dingus.SoundManager.SoundEffect;
 
 public class LoadingWorld extends AbstractWorld
 {
 	private SpriteWalker walker;
 	private int oldLives;
 	private int newLives;
-	private TextureRegion sheet;
 	private ArrayList<SpriteWalker> sprites = new ArrayList<SpriteWalker>();
 	
 	public LoadingWorld(Dingus game, int oldLives, int newLives) 
@@ -34,6 +37,11 @@ public class LoadingWorld extends AbstractWorld
 	@Override
 	protected void setupLevel() 
 	{
+		if(oldLives==0 && newLives == 0)//if skipped constructor, is first time
+		{
+			return;
+		}
+		
 		sprites = new ArrayList<SpriteWalker>();
 		for (int i = 0; i < getActors().size; )
 			getActors().removeIndex(i).remove();
@@ -75,45 +83,19 @@ public class LoadingWorld extends AbstractWorld
 			sprites.add(walker);
 		}
 		
-		if (newLives < oldLives)
+		if (newLives < oldLives && newLives>-1)
 		{
 			Image stopped = new Image(regions[0]);
-			stopped.setPosition((newLives-1.5f)*walker.getWidth() + this.getWidth()/2, 
-					getHeight() / 2 - walker.getHeight() / 2);
+			stopped.setPosition((newLives-1.5f)*stopped.getWidth() + this.getWidth()/2, 
+					getHeight() / 2 - stopped.getHeight() / 2);
 			stopped.addAction(Actions.sequence(Actions.fadeOut(1.5f), Actions.removeActor()));
 			addActor(stopped);
-			System.out.println("Hello!");
 		}
 
-		TextureRegion[] regions2 = 
-			{
-				new TextureRegion(atlas.findRegion("Explosion1")),
-				new TextureRegion(atlas.findRegion("Explosion2")),
-				new TextureRegion(atlas.findRegion("Explosion3")),
-				new TextureRegion(atlas.findRegion("Explosion4")),
-				new TextureRegion(atlas.findRegion("Explosion5")),
-				new TextureRegion(atlas.findRegion("Explosion6")),
-				new TextureRegion(atlas.findRegion("Explosion7")),
-				new TextureRegion(atlas.findRegion("Explosion8")),
-				new TextureRegion(atlas.findRegion("Explosion9")),
-				new TextureRegion(atlas.findRegion("Explosion10")),
-				new TextureRegion(atlas.findRegion("Explosion11")),
-				new TextureRegion(atlas.findRegion("Explosion12")),
-				new TextureRegion(atlas.findRegion("Explosion13")),
-				new TextureRegion(atlas.findRegion("Explosion14")),
-				new TextureRegion(atlas.findRegion("Explosion15")),
-				new TextureRegion(atlas.findRegion("Explosion16")),
-				new TextureRegion(atlas.findRegion("Explosion17")),
-				new TextureRegion(atlas.findRegion("Explosion18")),
-				new TextureRegion(atlas.findRegion("Explosion19")),
-				new TextureRegion(atlas.findRegion("Explosion20")),
-				};
-		walker = new SpriteWalker(regions2, .05f);
-		walker.setPosition( -1*walker.getWidth()/2 + this.getWidth()/2, 
-				getHeight() / 2 - walker.getHeight() / 2);
-		System.out.println(sprites);
-		sprites.add(walker);
-		addActor(walker);
+		if(newLives == 0)
+		{
+			gameOver();
+		}
 	}
 
 	@Override
@@ -128,6 +110,20 @@ public class LoadingWorld extends AbstractWorld
 		game.nextMinigame();
 	}
 	
+	private void gameOver()
+	{
+		Image gameOver = new Image(this.getAtlas().findRegion("gameOver"));
+		gameOver.setSize(game.getWidth() * .75f, game.getWidth() / 4);
+		gameOver.setPosition(game.getWidth() / 2 - gameOver.getWidth() / 2,
+				game.getHeight() / 2 - gameOver.getHeight() / 2);
+
+		addActor(gameOver);
+		game.getSoundManager().play(SoundEffect.GAME_OVER);
+
+		gameOver.addAction(Actions.sequence(Actions.fadeIn(.25f),
+		Actions.delay(3f), Actions.fadeOut(.25f)));
+	}
+	
 	public void act(float delta)
 	{
 		super.act(delta);
@@ -135,7 +131,7 @@ public class LoadingWorld extends AbstractWorld
 		for (int i = 0; i < sprites.size();i++)
 		{
 			SpriteWalker w = sprites.get(i);
-			w.update(delta, this);
+			w.update(delta);
 		}
 	}
 
