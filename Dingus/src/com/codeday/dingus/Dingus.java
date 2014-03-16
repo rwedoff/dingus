@@ -5,6 +5,8 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.FPSLogger;
+import com.codeday.loading.LoadingScreen;
+import com.codeday.loading.LoadingWorld;
 import com.codeday.selfdestructminigame.SelfDestructMinigame;
 import com.codeday.selfdestructminigame.SelfDestructWorld;
 
@@ -31,31 +33,11 @@ public class Dingus extends Game
 	private int width;
 
 	private int height;
+	
+	private int lives = 3;
 
 	public Dingus()
 	{
-	}
-
-	// Services' getters
-
-	public PreferencesManager getPreferencesManager()
-	{
-		return preferencesManager;
-	}
-
-	public LevelManager getLevelManager()
-	{
-		return levelManager;
-	}
-
-	public MusicManager getMusicManager()
-	{
-		return musicManager;
-	}
-
-	public SoundManager getSoundManager()
-	{
-		return soundManager;
 	}
 
 	// Game-related methods
@@ -83,6 +65,29 @@ public class Dingus extends Game
 		fpsLogger = new FPSLogger();
 	}
 
+	public void nextMinigame() 
+	{
+		int rand = (int) (Math.random() * 100);
+		
+		if (rand < 100)
+		{
+			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), 5000));
+		}
+	}
+
+	public void minigameLost() 
+	{
+		setScreen(new LoadingScreen(this, new LoadingWorld(this, lives, lives - 1), 3000));
+		lives--;
+	}
+	public void minigameWon()
+	{
+		System.out.println(lives);
+		setScreen(new LoadingScreen(this, new LoadingWorld(this, lives, lives), 3000));
+	}
+	
+
+
 	@Override
 	public void resize(int width, int height)
 	{
@@ -97,7 +102,7 @@ public class Dingus extends Game
 		{
 			if (DEV_MODE)
 			{
-				setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), 2000));
+				nextMinigame();
 			}
 			else
 			{
@@ -158,15 +163,25 @@ public class Dingus extends Game
 		return height;
 	}
 
-	public void nextMinigame() 
+	// Services' getters
+
+	public PreferencesManager getPreferencesManager()
 	{
-		//TODO: start next minigame
+		return preferencesManager;
 	}
 
-	public void minigameLost() 
+	public LevelManager getLevelManager()
 	{
-		//TODO: do something with lives or a cute dying sound
-		
-		nextMinigame();
+		return levelManager;
+	}
+
+	public MusicManager getMusicManager()
+	{
+		return musicManager;
+	}
+
+	public SoundManager getSoundManager()
+	{
+		return soundManager;
 	}
 }
