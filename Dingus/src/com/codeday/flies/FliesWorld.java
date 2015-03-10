@@ -132,11 +132,6 @@ public class FliesWorld extends AbstractWorld
 		}
 		
 		
-		
-		
-		
-		
-		
 		return false;
 		
 		

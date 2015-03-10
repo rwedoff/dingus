@@ -1,5 +1,6 @@
 package com.codeday.selfdestructminigame;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.scenes.scene2d.Action;
@@ -84,9 +85,12 @@ public class SelfDestructWorld extends AbstractWorld
 			{
 				public boolean act(float delta) 
 				{
+				
 					game.minigameLost();
 					return true;
 				}
+
+				
 				
 			}));
 			addActor(explosion);
@@ -115,7 +119,16 @@ public class SelfDestructWorld extends AbstractWorld
 	@Override
 	protected void minigameOver() 
 	{
+		this.dispose();
 		game.minigameWon(DingusConsts.SELFDESTRUCT_SCORE);
+	}
+	@Override
+	public void dispose()
+	{
+		super.dispose();
+		Gdx.app.log(Dingus.LOG, "Disposing Screen");
+		
+	
 	}
 	
 

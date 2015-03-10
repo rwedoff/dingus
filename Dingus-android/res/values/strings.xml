@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My LibGDX Game</string>
+    <string name="app_name">Dingus</string>
     <string name="app_id">326908678594</string> 
     <string name="leaderboard_id">CgkIwqOa6sEJEAIQBw</string>
     <string name="achievement1_id">CgkIwqOa6sEJEAIQAg</string>

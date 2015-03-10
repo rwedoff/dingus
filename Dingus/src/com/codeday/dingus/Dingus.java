@@ -90,20 +90,28 @@ public class Dingus extends Game
 	//SELECTS MINI GAME
 	public void nextMinigame() 
 	{
-		int rand = (int) (Math.random() * 100);
-		
+		int rand;
+		if(DEV_MODE == true)
+		{
+			rand = 200;
+		}
+		else
+		{
+			rand = (int) (Math.random() * 100);
+		}
 		float rand2 = (float) Math.random();
 		float offset = 0;
-		if (rand <= 10 )
+		if (rand <= 10 || rand ==200  )
 		{
-			if(games<=6)
+			if(games<=6  )
 				offset = games*(rand2-.5f)*(1200);
 			else 
 				offset = (rand2-.5f)*(3000);
+			this.dispose();
 			setScreen(new SelfDestructMinigame(this, new SelfDestructWorld(this), (long) (5000 + offset) ));
 			games++;
 		}
-		else if(rand < 30   )
+		else if(rand < 30 )
 		{
 			if(games<=6)
 				offset = games*rand2*(800);
@@ -129,10 +137,12 @@ public class Dingus extends Game
 			else 
 				offset = rand2*(-3000);
 			setScreen(new FliesMinigame(this, new FliesWorld(this), (long) (5000 + offset) ));
+			games++;
 		}
-		else if(rand >= 75)
+		else if(rand >= 75 && rand != 200)
 		{
 			setScreen(new JumpMinigame(this, new JumpWorld(this), 5000));
+			games++;
 		}
 	}
 
@@ -145,6 +155,7 @@ public class Dingus extends Game
 	{
 		System.out.println(getLives());
 		score += pointsWon;
+		this.dispose();
 		setScreen(new LoadingScreen(this, new LoadingWorld(this, getLives(), getLives()), 3000));
 	}
 	

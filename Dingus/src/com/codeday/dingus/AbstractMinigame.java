@@ -42,4 +42,5 @@ public abstract class AbstractMinigame extends AbstractScreen
 	{
 		((AbstractWorld)stage).pause();
 	}
+	
 }
